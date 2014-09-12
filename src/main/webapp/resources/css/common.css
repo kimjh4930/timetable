@@ -1,96 +1,209 @@
 div {
-    display: block;
+	display: block;
 }
 
 html {
-    width: 1430px;
+	width: 1430px;
+}
+
+header {
+	width: 980px;
+	height: 180px;
+	margin: 0 auto;
+	position: relative;
+	padding: 0 0 7px 0;
+	background-color: #ffffff;
 }
 
 body {
-    background: white;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    word-wrap: break-word;
+	background: white;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-wrap: break-word;
+	font-face: "nanumgothic";
 }
 
-#bodyWrap {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-}
-
-.layout_head {
-    width: 980px;
-    height: 180px;
-    margin: 0 auto;
-    position: relative;
-    padding: 0 0 7px 0;
-    background-color: #ECECEC;
+footer {
+	margin: 0 auto;
+	padding-top: 5px;
+	width: 980px;
+	height: 107px;
+	clear: both;
+	position: relative;
+	z-index: 40;
+	background-color: #ffffff;
 }
 
 .layout_body {
-    position: relative;
-    width: 980px;
-    height: 540px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 0 0 39px 0;
-    background-color: #F7F51E;
-    border-bottom: 1px solid #ffffff;
-}
-
-.layout_foot {
-    margin: 0 auto;
-    padding-top: 5px;
-    width: 980px;
-    height: 107px;
-    clear: both;
-    position: relative;
-    z-index: 40;
-    background-color: #ECECEC;
+	position: relative;
+	width: 980px;
+	height: 540px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 0 39px 0;
+	background-color: #F7F51E;
+	border-bottom: 1px solid #ffffff;
 }
 
 .leftArea {
-    float: left;
-    width: 490px;
-    height: 540px;
-    overflow: hidden;
-    background-color: yellow;
+	float: left;
+	width: 490px;
+	height: 540px;
+	overflow: hidden;
+	background-color: yellow;
 }
 
 .rightArea {
-    width: 490px;
-    height: 540px;
-    overflow: hidden;
-    background-color: #BE835C;
+	width: 490px;
+	height: 540px;
+	overflow: hidden;
+	background-color: #BE835C;
 }
 
-
-.dgreeArea {
-    height: 75px;
-    overflow: hidden;
-    background-color: #1EF751;
+.creditArea {
+	height: 75px;
+	overflow: hidden;
+	background-color: #1EF751;
 }
-
 
 .timeTableArea {
-    height: 465px;
-    overflow: hidden;
-    background-color: #1E7FF7;
+	height: 465px;
+	overflow: hidden;
+	background-color: #1E7FF7;
 }
 
+.timeTableFrame {
+	width: 458px;
+	height: 465px;
+	overflow: hidden;
+	background-color: #6E6F6F;
+}
+
+.LeftTableFrame {
+	width: 74px;
+	height: 462px;
+	background-color: #EBEBEB;
+	float: left;
+	margin: 0 0 3px 3px;
+	background-color: #6E6F6F;
+}
+
+.timeBoard {
+	width: 74px;
+	height: 432px;
+	background-color: #EBEBEB;
+	float: left;
+	margin-top: 30px;
+}
+
+.timeBoardTable {
+	width: 74px;
+	table-layout: fixed;
+	border-collapse: collapse;
+	position: absolute;
+	font-size: 9px;
+	text-align: right;
+}
+
+.timeBoardTable th {
+	height: 27px;
+	border-top: 1px none #FFFFFF;
+	border-bottom: 1px solid #6E6F6F;
+}
+
+.timeBoardTable td {
+	height: 24px;
+	border: 1px solid #6E6F6F;
+}
+
+.daytimeMark {
+	width: 12px;
+	height: 12px;
+	float: left;
+	background-color: #73BDE8;
+	color: white;
+	font-size: 11px;
+}
+
+.RightTableFrame {
+	width: 375px;
+	height: 465px;
+	overflow: hidden;
+	float: right;
+	margin: 0 3px 3px 0;
+}
+
+.dayText {
+	width: 343px;
+	height: 22px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	float: right;
+	word-spacing: 58px;
+	padding-left: 35px;
+	padding-top: 8px;
+}
+
+.whiteBoard {
+	width: 375px;
+	height: 432px;
+	background-color: #FFFFFF;
+	float: right;
+}
+
+.myTable {
+	width: 375px;
+	table-layout: fixed;
+	border-collapse: collapse;
+	position: absolute;
+}
+
+.myTable th {
+	height: 27px;
+	border-top: 1px none #FFFFFF;
+	border-bottom: 1px solid #6E6F6F;
+}
+
+.myTable td {
+	height: 24px;
+	border: 1px solid #6E6F6F;
+}
 
 .searchArea {
-    height: 170px;
-    overflow: hidden;
-    background-color: #006738;
+	height: 170px;
+	overflow: hidden;
+	background-color: #006738;
 }
 
-.searchResultArea {
-    height: 370px;
-    overflow: hidden;
-    background-color: #DE5B5B;
+.subjectResultArea {
+	height: 370px;
+	overflow: hidden;
+	background-color: #EAECEC;
+}
+
+.title1 {
+	width: 160px;
+	height: 17px;
+	background-color: #565757;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+	float: left;
+	padding-left: 10px;
+	padding-top: 8px;
+}
+
+.title2 {
+	width: 320px;
+	height: 17px;
+	background-color: #565757;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+	float: right;
+	word-spacing: 10px;
+	padding-top: 8px;
 }

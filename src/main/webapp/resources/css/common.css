@@ -12,7 +12,7 @@ header {
 	margin: 0 auto;
 	position: relative;
 	padding: 0 0 7px 0;
-	background-color: #ffffff;
+	background-color: #E5F9E6;
 }
 
 body {
@@ -22,7 +22,9 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	word-wrap: break-word;
-	font-face: "nanumgothic";
+	font-family: "Malgun Gothic", "굴림", "Gulim", "Arial", sans-serif;;
+	font-size: 13px;
+	font-weight: bold;
 }
 
 footer {
@@ -33,7 +35,7 @@ footer {
 	clear: both;
 	position: relative;
 	z-index: 40;
-	background-color: #ffffff;
+	background-color: #E5F9E6;
 }
 
 .layout_body {
@@ -43,7 +45,7 @@ footer {
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 0 0 39px 0;
-	background-color: #F7F51E;
+	background-color: #ffffff;
 	border-bottom: 1px solid #ffffff;
 }
 
@@ -52,26 +54,39 @@ footer {
 	width: 490px;
 	height: 540px;
 	overflow: hidden;
-	background-color: yellow;
 }
 
 .rightArea {
 	width: 490px;
 	height: 540px;
 	overflow: hidden;
-	background-color: #BE835C;
 }
 
 .creditArea {
-	height: 75px;
+	height: 70px;
 	overflow: hidden;
-	background-color: #1EF751;
+	padding-top: 5px;
+	line-height: 2.6;
+}
+
+.reset_bt {
+	width: 55px;
+	height: 27px;
+	border: solid 0px #FFFFFF;
+	background-image: url(/resources/else/reset_bt.png);
+}
+
+.saveexel_bt {
+	width: 85px;
+	height: 27px;
+	border: solid 0px #FFFFFF;
+	background-image: url(/resources/else/saveexel_bt.png);
 }
 
 .timeTableArea {
 	height: 465px;
 	overflow: hidden;
-	background-color: #1E7FF7;
+	background-color: #ffffff;
 }
 
 .timeTableFrame {
@@ -105,6 +120,7 @@ footer {
 	position: absolute;
 	font-size: 9px;
 	text-align: right;
+	font-weight: normal;
 }
 
 .timeBoardTable th {
@@ -119,8 +135,8 @@ footer {
 }
 
 .daytimeMark {
-	width: 12px;
-	height: 12px;
+	width: 16px;
+	height: 16px;
 	float: left;
 	background-color: #73BDE8;
 	color: white;
@@ -144,7 +160,8 @@ footer {
 	float: right;
 	word-spacing: 58px;
 	padding-left: 35px;
-	padding-top: 8px;
+	padding-top: 6px;
+	padding-bottom: 2px;
 }
 
 .whiteBoard {
@@ -173,9 +190,57 @@ footer {
 }
 
 .searchArea {
-	height: 170px;
+	height: 165px;
 	overflow: hidden;
-	background-color: #006738;
+	padding-top: 5px;
+	line-height: 2.5;
+}
+
+input[type=checkbox].css-checkbox {
+	display: none;
+}
+
+input[type=checkbox].css-checkbox+label.css-label {
+	padding-left: 20px;
+	margin-bottom: 3px;
+	margin-right: 8px;
+	height: 14px;
+	display: inline-block;
+	line-height: 14px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	font-size: 13px;
+	vertical-align: middle;
+	cursor: pointer;
+	height: 14px;
+	font-weight: normal;
+}
+
+input[type=checkbox].css-checkbox:checked+label.css-label {
+	background-position: 0 -14px;
+}
+
+label.css-label {
+	background-image: url(/resources/else/checkboxdesign.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.line {
+	height: 3px;
+	margin-top: 6px;
+	background-color: #F1F0E4;
+}
+
+.bookbark_button {
+	width: 85px;
+	height: 25px;
+	border: solid 0px #FFFFFF;
+	background-image: url(/resources/else/bookmark_bt.png);
 }
 
 .subjectResultArea {
@@ -193,7 +258,8 @@ footer {
 	color: white;
 	float: left;
 	padding-left: 10px;
-	padding-top: 8px;
+	padding-top: 5px;
+	padding-bottom: 3px;
 }
 
 .title2 {
@@ -205,5 +271,6 @@ footer {
 	color: white;
 	float: right;
 	word-spacing: 10px;
-	padding-top: 8px;
+	padding-top: 5px;
+	padding-bottom: 3px;
 }

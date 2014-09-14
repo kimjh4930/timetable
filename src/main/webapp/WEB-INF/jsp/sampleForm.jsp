@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Sample Form</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<script type="text/javascript" src="/resources/js/common.js"></script>
 </head>
 
 <header>header</header>
@@ -19,8 +20,8 @@
 					<option value="second">2</option>
 					<option value="third">3</option>
 				</select> 번째 시간표
-				<button type="button" name="reset">초기화</button>
-				<button type="button" name="SaveExcel">엑셀로 저장</button>
+				<button type="button" class="reset_bt" name="reset"></button>
+				<button type="button" class="saveexel_bt" name="SaveExcel"></button>
 				<br> 총 0학점 전공 0학점 교양 0학점 기타 0학점
 			</div>
 			<div class="timeTableArea">
@@ -234,16 +235,25 @@
 					<option value="friday">금</option>
 				</select><br>
 				<form>
-					학년 <input type="checkbox" name="year" value="1" checked="checked">1
-					<input type="checkbox" name="year" value="2" checked="checked">2
-					<input type="checkbox" name="year" value="3" checked="checked">3
-					<input type="checkbox" name="year" value="4" checked="checked">4
-					<select class="searchSelect">
+					학년 <input type="checkbox" id="ch1" class="css-checkbox" name="year"
+						value="1" checked="checked"> <label for="ch1"
+						class="css-label">1</label> <input type="checkbox" id="ch2"
+						class="css-checkbox" name="year" value="2" checked="checked">
+					<label for="ch2" class="css-label">2</label> <input type="checkbox"
+						id="ch3" class="css-checkbox" name="year" value="3"
+						checked="checked"> <label for="ch3" class="css-label">3</label>
+					<input type="checkbox" id="ch4" class="css-checkbox" name="year"
+						value="4" checked="checked"> <label for="ch4"
+						class="css-label">4</label> <input type="text" name="searchBox"
+						style="float: right;"> <select class="searchSelect"
+						style="float: right;">
 						<option value="search">검색</option>
-					</select> <input type="text" name="searchBox">
+					</select>
 				</form>
-				<br> <br>
-				<button type="button" name="bookmark">북마크 보기</button>
+				<div class="line"></div>
+				<br>
+				<button type="button" class="bookbark_button" name="bookmark"
+					style="float: right;"></button>
 			</div>
 			<div class="subjectResultArea">
 				<div class="title1">교과목명</div>

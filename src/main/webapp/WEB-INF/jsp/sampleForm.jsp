@@ -7,6 +7,27 @@
 <title>Sample Form</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
 <script type="text/javascript" src="/resources/js/common.js"></script>
+<script type="text/javascript" src="/resources/jquery/jquery-1.11.1.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="/resources/js/ajax.js"></script>
+
+<!--  
+<script>
+
+	$(function() {
+		$('.bookbark_button').on('click',function() {
+			$('<div></div>').html('댓글').css({
+				backgroundColor : 'white'
+			}).css({
+				width : '480'
+			}).css({
+				height : '80'
+			}).appendTo('.subjectResultArea');
+		});
+	});
+</script>
+-->
 </head>
 
 <header>header</header>
@@ -91,11 +112,11 @@
 					<div class="RightTableFrame">
 						<table class="myTable">
 							<tr>
-								<th>&nbsp;</th>
-								<th>&nbsp;</th>
-								<th>&nbsp;</th>
-								<th>&nbsp;</th>
-								<th>&nbsp;</th>
+								<th>월</th>
+								<th>화</th>
+								<th>수</th>
+								<th>목</th>
+								<th>금</th>
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
@@ -210,7 +231,6 @@
 								<td>&nbsp;</td>
 							</tr>
 						</table>
-						<div class="dayText">월 화 수 목 금</div>
 						<div class="whiteBoard"></div>
 					</div>
 				</div>
@@ -258,6 +278,7 @@
 			<div class="subjectResultArea">
 				<div class="title1">교과목명</div>
 				<div class="title2">이수구분 학년/학점 담당교수 시간/강의실 북마크</div>
+				<div class="listArea"></div>
 			</div>
 		</div>
 	</div>

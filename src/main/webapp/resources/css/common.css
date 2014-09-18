@@ -71,14 +71,14 @@ footer {
 
 .reset_bt {
 	width: 55px;
-	height: 27px;
+	height: 25px;
 	border: solid 0px #FFFFFF;
 	background-image: url(/resources/else/reset_bt.png);
 }
 
 .saveexel_bt {
 	width: 85px;
-	height: 27px;
+	height: 25px;
 	border: solid 0px #FFFFFF;
 	background-image: url(/resources/else/saveexel_bt.png);
 }
@@ -141,6 +141,7 @@ footer {
 	background-color: #73BDE8;
 	color: white;
 	font-size: 11px;
+	text-align: center;
 }
 
 .RightTableFrame {
@@ -151,24 +152,12 @@ footer {
 	margin: 0 3px 3px 0;
 }
 
-.dayText {
-	width: 343px;
-	height: 22px;
-	font-size: 12px;
-	font-weight: bold;
-	color: white;
-	float: right;
-	word-spacing: 58px;
-	padding-left: 35px;
-	padding-top: 6px;
-	padding-bottom: 2px;
-}
-
 .whiteBoard {
 	width: 375px;
 	height: 432px;
 	background-color: #FFFFFF;
 	float: right;
+	margin-top: 30px;
 }
 
 .myTable {
@@ -182,6 +171,8 @@ footer {
 	height: 27px;
 	border-top: 1px none #FFFFFF;
 	border-bottom: 1px solid #6E6F6F;
+	color: #ffffff;
+	font-size: 12px;
 }
 
 .myTable td {
@@ -273,4 +264,11 @@ label.css-label {
 	word-spacing: 10px;
 	padding-top: 5px;
 	padding-bottom: 3px;
+}
+
+.listArea {
+	width: 490px;
+	height: 362px;
+	margin-top: 25px;
+	overflow: auto;
 }

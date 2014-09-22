@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd" >
+<properties>
+
+    <comment>환경설정</comment>
+    
+    <entry key="datasource.sqlmap.url">jdbc:mysql://117.16.244.145:3306/inulife10</entry>
+    <entry key="datasource.sqlmap.username">inulife10</entry>
+    <entry key="datasource.sqlmap.password">inulife111</entry>
+    
+    <entry key="url.template.home"><![CDATA[http://alpha-cs.toast.com/ver3/hsp/index.nhn?alias=[0]&_adminLocale=[1]]]></entry>
+
+</properties>
+

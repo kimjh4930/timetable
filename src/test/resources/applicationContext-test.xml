@@ -16,11 +16,6 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-    <util:properties id="common" location="classpath:/common.xml" />
-    
-    <import resource="classpath:spring/applicationContext-dao-config.xml" />
-
-
 	<!-- <context:component-scan base-package="com.nhnent.admin" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
@@ -29,6 +24,10 @@
 	
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
  
+  	<util:properties id="common" location="classpath:/common.xml" />
+  	
+  	<import resource="classpath:spring/applicationContext-dao-config.xml" />
+
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 	
 	<cache:annotation-driven />

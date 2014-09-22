@@ -73,14 +73,14 @@ footer {
 	width: 55px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/reset_bt.png);
+	background-image: url(/resources/img/reset_bt.png);
 }
 
 .saveexel_bt {
 	width: 85px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/saveexel_bt.png);
+	background-image: url(/resources/img/saveexel_bt.png);
 }
 
 .timeTableArea {
@@ -212,7 +212,7 @@ input[type=checkbox].css-checkbox:checked+label.css-label {
 }
 
 label.css-label {
-	background-image: url(/resources/else/checkboxdesign.png);
+	background-image: url(/resources/img/checkboxdesign.png);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -231,7 +231,7 @@ label.css-label {
 	width: 85px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/bookmark_bt.png);
+	background-image: url(/resources/img/bookmark_bt.png);
 }
 
 .subjectResultArea {

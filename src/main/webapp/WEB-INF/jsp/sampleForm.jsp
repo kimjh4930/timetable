@@ -8,34 +8,18 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/jquery/jquery-1.11.1.js"></script>
-
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script src="/resources/js/ajax.js"></script>
-
-<!--  
-<script>
-
-	$(function() {
-		$('.bookbark_button').on('click',function() {
-			$('<div></div>').html('댓글').css({
-				backgroundColor : 'white'
-			}).css({
-				width : '480'
-			}).css({
-				height : '80'
-			}).appendTo('.subjectResultArea');
-		});
-	});
-</script>
--->
 </head>
 
-<header>header</header>
 
 <body>
-	<div class="layout_body">
-		<div class="leftArea">
-			<div class="creditArea">
+	<header id="main_header">
+		<h3>header</h3>
+	</header>
+	<div id="content">
+		<section id="left_section">
+			<article class="creditArea">
 				<select class="ordinalTable">
 					<option value="fitst">1</option>
 					<option value="second">2</option>
@@ -44,200 +28,196 @@
 				<button type="button" class="reset_bt" name="reset"></button>
 				<button type="button" class="saveexel_bt" name="SaveExcel"></button>
 				<br> 총 0학점 전공 0학점 교양 0학점 기타 0학점
-			</div>
-			<div class="timeTableArea">
-				<div class="timeTableFrame">
-					<div class="LeftTableFrame">
-						<table class="timeBoardTable">
-							<tr>
-								<th>&nbsp;</th>
-							</tr>
-							<tr>
-								<td>0교시 8:30
-									<div class="daytimeMark">주</div>
-								</td>
-							</tr>
-							<tr>
-								<td>1교시 9:30</td>
-							</tr>
-							<tr>
-								<td>2교시 10:30</td>
-							</tr>
-							<tr>
-								<td>3교시 11:30</td>
-							</tr>
-							<tr>
-								<td>4교시 12:30</td>
-							</tr>
-							<tr>
-								<td>5교시 1:30</td>
-							</tr>
-							<tr>
-								<td>6교시 2:30</td>
-							</tr>
-							<tr>
-								<td>7교시 3:30</td>
-							</tr>
-							<tr>
-								<td>8교시 4:30</td>
-							</tr>
-							<tr>
-								<td>9교시 5:30</td>
-							</tr>
-							<tr>
-								<td>1교시 6:00
-									<div class="daytimeMark">야</div>
-								</td>
+			</article>
+			<article class="timeTableArea">
+				<div class="LeftTableFrame">
+					<table class="timeBoardTable">
+						<tr>
+							<th>&nbsp;</th>
+						</tr>
+						<tr>
+							<td>0교시 8:30
+								<div class="daytimeMark">주</div>
+							</td>
+						</tr>
+						<tr>
+							<td>1교시 9:30</td>
+						</tr>
+						<tr>
+							<td>2교시 10:30</td>
+						</tr>
+						<tr>
+							<td>3교시 11:30</td>
+						</tr>
+						<tr>
+							<td>4교시 12:30</td>
+						</tr>
+						<tr>
+							<td>5교시 1:30</td>
+						</tr>
+						<tr>
+							<td>6교시 2:30</td>
+						</tr>
+						<tr>
+							<td>7교시 3:30</td>
+						</tr>
+						<tr>
+							<td>8교시 4:30</td>
+						</tr>
+						<tr>
+							<td>9교시 5:30</td>
+						</tr>
+						<tr>
+							<td>1교시 6:00
+								<div class="daytimeMark">야</div>
+							</td>
 
-							</tr>
-							<tr>
-								<td>2교시 6:55</td>
-							</tr>
-							<tr>
-								<td>3교시 7:50</td>
-							</tr>
-							<tr>
-								<td>4교시 8:45</td>
-							</tr>
-							<tr>
-								<td>5교시 9:40</td>
-							</tr>
-							<tr>
-								<td>6교시 10:35</td>
-							</tr>
+						</tr>
+						<tr>
+							<td>2교시 6:55</td>
+						</tr>
+						<tr>
+							<td>3교시 7:50</td>
+						</tr>
+						<tr>
+							<td>4교시 8:45</td>
+						</tr>
+						<tr>
+							<td>5교시 9:40</td>
+						</tr>
+						<tr>
+							<td>6교시 10:35</td>
+						</tr>
 
-						</table>
-						<div class="timeBoard"></div>
-					</div>
-					<div class="RightTableFrame">
-						<table class="myTable">
-							<tr>
-								<th>월</th>
-								<th>화</th>
-								<th>수</th>
-								<th>목</th>
-								<th>금</th>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-							</tr>
-						</table>
-						<div class="whiteBoard"></div>
-					</div>
+					</table>
 				</div>
-			</div>
-		</div>
-		<div class="rightArea">
-			<div class="searchArea">
+				<div class="RightTableFrame">
+					<table class="myTable">
+						<tr>
+							<th>월</th>
+							<th>화</th>
+							<th>수</th>
+							<th>목</th>
+							<th>금</th>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</div>
+			</article>
+		</section>
+		<section id="right_section">
+			<article class="searchArea">
 				캠퍼스구분 <select class="CampusSort">
 					<option value="songdo">송도</option>
 					<option value="jemulpo">제물포</option>
@@ -274,16 +254,19 @@
 				<br>
 				<button type="button" class="bookbark_button" name="bookmark"
 					style="float: right;"></button>
-			</div>
-			<div class="subjectResultArea">
+			</article>
+			<article class="subjectResultArea">
 				<div class="title1">교과목명</div>
 				<div class="title2">이수구분 학년/학점 담당교수 시간/강의실 북마크</div>
 				<div class="listArea"></div>
-			</div>
-		</div>
+			</article>
+		</section>
 	</div>
+	<footer id="main_footer">
+		<h3>footer</h3>
+	</footer>
+
 </body>
 
-<footer>foot</footer>
 
 </html>

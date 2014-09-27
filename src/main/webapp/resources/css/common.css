@@ -211,7 +211,7 @@ input[type=checkbox].css-checkbox:checked+label.css-label {
 	background-position: 0 -14px;
 }
 
-label.css-label {
+#content>#right_section>.searchArea label.css-label {
 	background-image: url(/resources/img/checkboxdesign.png);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;

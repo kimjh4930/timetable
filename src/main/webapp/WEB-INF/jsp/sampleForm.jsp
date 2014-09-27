@@ -263,7 +263,7 @@
 	<footer id="main_footer">
 		<h3>footer</h3>
 	</footer>
-
+	<div id="lineEvaluationArea"></div>
 </body>
 
 

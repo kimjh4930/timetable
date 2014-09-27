@@ -20,20 +20,16 @@ public class SampleController {
 
 
 	@RequestMapping("/getList.baron")
-	public String getList(/*Model model, String name, int year*/) {
-		//		model.addAttribute("name", name);
-		//		model.addAttribute("year", year);
-		//		
+	public String getList() {
 		return "getList";
 	}
+	
 	@RequestMapping("/getLineEvaluation.baron")
 	public String getLineEvaluation(Model model, int subjectCode) {
-		//		model.addAttribute("name", name);
-		//		model.addAttribute("year", year);
-		//		
-		LineEvaluationModel lineEvaluationModel =service.getLineEvaluation(subjectCode);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
 		
-		return "getList";
+		return "lineEvaluationPopup";
 	}
 
 }

@@ -6,10 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Sample Form</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
-<script type="text/javascript" src="/resources/jquery/jquery-1.11.1.js"></script>
-<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-<script src="/resources/js/ajax.js"></script>
 </head>
 
 

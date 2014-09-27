@@ -1,25 +1,39 @@
 package com.baron.sample.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.baron.sample.model.LineEvaluationModel;
+import com.baron.sample.service.SampleService;
+
 @Controller
 public class SampleController {
-
+	@Autowired
+	private SampleService service;
+	
 	@RequestMapping("/sampleForm.baron")
 	public String viewSampleForm() {
 		return "sampleForm";
 	}
-	
-	
-	@RequestMapping("/sampleForm.getList.baron")
+
+
+	@RequestMapping("/getList.baron")
 	public String getList(/*Model model, String name, int year*/) {
-//		model.addAttribute("name", name);
-//		model.addAttribute("year", year);
-//		
+		//		model.addAttribute("name", name);
+		//		model.addAttribute("year", year);
+		//		
 		return "getList";
 	}
-	
+	@RequestMapping("/getLineEvaluation.baron")
+	public String getLineEvaluation(Model model, int subjectCode) {
+		//		model.addAttribute("name", name);
+		//		model.addAttribute("year", year);
+		//		
+		LineEvaluationModel lineEvaluationModel =service.getLineEvaluation(subjectCode);
+		
+		return "getList";
+	}
+
 }
-	

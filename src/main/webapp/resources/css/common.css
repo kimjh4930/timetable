@@ -68,14 +68,14 @@ body {
 	width: 55px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/reset_bt.png);
+	background-image: url(/resources/img/reset_bt.png);
 }
 
 #content>#left_section>.creditArea>.saveexel_bt {
 	width: 85px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/saveexel_bt.png);
+	background-image: url(/resources/img/saveexel_bt.png);
 }
 
 #content>#left_section>.timeTableArea {
@@ -191,7 +191,7 @@ body {
 }
 
 #content>#right_section>.searchArea label.css-label {
-	background-image: url(/resources/else/checkboxdesign.png);
+	background-image: url(/resources/img/checkboxdesign.png);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -210,7 +210,7 @@ body {
 	width: 85px;
 	height: 25px;
 	border: solid 0px #FFFFFF;
-	background-image: url(/resources/else/bookmark_bt.png);
+	background-image: url(/resources/img/bookmark_bt.png);
 }
 
 #content>#right_section>.subjectResultArea {
@@ -251,4 +251,14 @@ body {
 	margin-top: 29px;
 	overflow: auto;
 	background-color: #EAECEC;
+}
+
+.list {
+	background-color: #FFFFFF;
+	width: 482px;
+	height: 53px;
+	border-bottom: 4px solid #EAECEC;
+	border-left: 4px solid #EAECEC;
+	border-right: 4px solid #EAECEC;
+	line-height: 53px;
 }

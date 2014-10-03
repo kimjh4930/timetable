@@ -233,8 +233,7 @@
 					<option value="friday">금</option>
 				</select><br>
 				<form>
-					학년 <input type="checkbox" id="ch1" class="css-checkbox" name="year"
-						value="1" checked="checked"> <label for="ch1"
+					학년 <input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked"> <label for="ch1"
 						class="css-label">1</label> <input type="checkbox" id="ch2"
 						class="css-checkbox" name="year" value="2" checked="checked">
 					<label for="ch2" class="css-label">2</label> <input type="checkbox"
@@ -242,11 +241,13 @@
 						checked="checked"> <label for="ch3" class="css-label">3</label>
 					<input type="checkbox" id="ch4" class="css-checkbox" name="year"
 						value="4" checked="checked"> <label for="ch4"
-						class="css-label">4</label> <input type="text" name="searchBox"
-						style="float: right;"> <select class="searchSelect"
-						style="float: right;">
-						<option value="search">검색</option>
-					</select>
+						class="css-label">4</label>
+					<input type="text" name="searchBox" id="searchBox">
+					<select class="searchSelect" style="float: right;" id="selectSearch">
+						<option value="subject">과목명</option>
+						<option value="professor">교수명</option>
+					</select> 
+					<button type="button" class="search_bt" name="검색" id="btnSearch">검색</button>
 				</form>
 				<div class="line"></div>
 				<br>

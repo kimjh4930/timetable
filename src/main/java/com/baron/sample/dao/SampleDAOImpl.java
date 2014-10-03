@@ -19,6 +19,7 @@ public class SampleDAOImpl implements SampleDAO {
 	
 	@Override
 	public int selectTest()  {
+		//mybatis에서 받아온거
 		return session.<Integer>selectOne(NAMESPACE + "selectNextAdminSerial");
 	}
 	

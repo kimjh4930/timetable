@@ -35,9 +35,24 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#btnSearch").click(function(){
+		$.ajax({
+			type:"GET",							// GET or POST
+			url:"/getSearchResult.baron",				// 호출할 URL
+			data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
+			datatype:"xml",						// html, xml, json, jsonp, script, text
+			timeout:10000,
+			error:function() {					// Ajax error handler
+				alert('ajax failed');
+			},
+			success:function(data, status) {	// Ajax complete handelr
+				$('.listArea').empty().append(data).find('div').each(function(index) {
+					
 
-
-
+				})
+			}
+		});
+	});
 });
 
 

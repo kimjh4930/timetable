@@ -44,4 +44,14 @@ public class SampleController {
 		return "getList";
 	}
 
+	@RequestMapping("/registerSubject.baron")
+	public String registerSubject(Model model, String subjectCode, int timetableNo) {
+		//List<SubjectResultModel> subjectResultList = service.getSubjectResultList(searchType, searchKey);//new ArrayList<SubjectResultModel>();
+		//model.addAttribute("subjectResultList", subjectResultList); //(key, value)
+		//getList의 자료를 받아옴
+		int memberCode = 000000;
+		service.registerSubject(subjectCode, memberCode, timetableNo);
+		
+		return "subjectCell";
+	}
 }

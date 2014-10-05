@@ -42,7 +42,6 @@ public class SampleServiceImpl implements SampleService {
 		command.setMemberCode(memberCode);
 		command.setTimetableNo(timetableNo);
 		List<PersonalModel> list = personalDAO.selectPersonalData(command);
-		return list;
 	}
 	
 }

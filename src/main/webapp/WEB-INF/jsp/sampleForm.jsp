@@ -4,14 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Sample Form</title>
-<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
-<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
-<script type="text/javascript" src="/resources/js/common.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	<title>Sample Form</title>
+	<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+	<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/resources/js/common.js"></script>
 </head>
-
-
 <body>
 	<header id="main_header">
 		<h3>header</h3>

@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.baron.sample.model.LineEvaluationModel;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext-test.xml")
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
@@ -20,11 +22,12 @@ public class SampleDAOImplTest {
 	private SampleDAO dao;
 
 	@Test
-	public void test() throws Exception {
+	public void testSelectLineEvaluation() throws Exception {
 		//Given
+		int subjectCode = 1234567;
 
 		//When
-		int actual = dao.selectTest();
+		LineEvaluationModel actual = dao.selectLineEvaluation(subjectCode);
 
 		//Then
 		assertEquals(2, actual);

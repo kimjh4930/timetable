@@ -9,4 +9,32 @@
         WHERE member_srl = #{memberCode} and tt_no = #{timetableNo}
     </select>
     
+    <select id="selectLineEvaluation" resultType="lineEvaluationModel" parameterType="int">
+    	SELECT
+    		le.le_no as indexNo, 
+    		le.subject_code as subjectCode,
+    		s.title as subjectName,
+    		s.professor as professorName,
+    		le.star_score as aveStarScore
+    	FROM 
+    		tt_line_evaulation le, tt_subject s
+    	WHERE
+    		le.subject_code = s.code
+    	AND
+    		le.subject_code = #{subjectCode}
+    </select>
+    
+        <select id="selectLineEvaluationItem" resultType="lineEvaluationItem" parameterType="int">
+    	SELECT
+    		le.member_srl as userId,
+    		le.comment as comment,
+    		le.star_score as starScore
+    	FROM 
+    		tt_line_evaulation le, xe_member m
+    	WHERE
+    		le.member_srl = m.member_srl
+    	AND
+    		le.subject_code = #{subjectCode}
+    </select>
+    
 </mapper>

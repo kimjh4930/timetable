@@ -25,7 +25,12 @@ public class SampleDAOImpl implements SampleDAO {
 	
 	@Override
 	public LineEvaluationModel selectLineEvaluation(int subjectCode) {
-
+		
+		
+		return session.selectOne(NAMESPACE);
+		
+		
+/*
 		LineEvaluationModel model = new LineEvaluationModel();
 		model.setSubjectName("3급한국어회화(2)");
 		model.setProfessorName("김한석");
@@ -48,6 +53,6 @@ public class SampleDAOImpl implements SampleDAO {
 		itemList.add(item2);
 		model.setItemList(itemList);
 		
-		return model;
+		return model;*/
 	}
 }

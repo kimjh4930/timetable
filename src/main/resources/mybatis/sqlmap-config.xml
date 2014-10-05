@@ -4,5 +4,7 @@
 	<typeAliases>
 		<typeAlias type="com.baron.sample.model.PersonalModel"        alias="personalModel" />
 		<typeAlias type="com.baron.sample.model.PersonalCommandModel" alias="personalCommandModel" />
+		<typeAlias type="com.baron.sample.model.LineEvaluationModel" alias="lineEvaluationModel" />
+		<typeAlias type="com.baron.sample.model.LineEvaluationItem" alias="lineEvaluationItem" />
 	</typeAliases>
 </configuration>

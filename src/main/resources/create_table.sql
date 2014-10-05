@@ -34,3 +34,14 @@ INSERT INTO tt_personal( idx_no, member_srl, semester, tt_no, subject_list, inse
 VALUES ( 1, 3465, '2014_2', 1, 'XAA2031001,0001250001,0001248001', '2012-02-12 11:22:10' );
 
 
+CREATE TABLE  IF NOT EXISTS tt_line_evaulation(
+	le_no int not null primary key,
+	subject_code int not null, 
+	member_srl int not null,
+	comment varchar(100),
+	star_score float not null,
+	insertdate datetime not null
+);
+
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 3, 1234567, 3894, "이거좋아용", 9.5, '2012-02-12 11:22:10' );

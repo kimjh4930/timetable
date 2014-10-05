@@ -1,14 +1,15 @@
 $(document).ready(function() {
+	
+	// 북마크버튼에 이벤트 연결
 	$(".bookbark_button").click(function() {
 		$.ajax({
-			type:"GET",							// GET or POST
-			url:"/getList.baron",			// URL
-			datatype:"xml",						// html, xml, json, jsonp, script, text
-			timeout:10000,
-			error:function() {					// Ajax error handler
+			type:"GET",
+			url:"/getList.baron",
+			datatype:"xml",
+			error:function() {
 				alert('ajax failed');
 			},
-			success:function(data, status) {	// Ajax complete handelr
+			success:function(data, status) {
 				$('.listArea').empty().append(data).find('div').each(function(index) {
 					setEventSubject($(this));
 				})
@@ -16,17 +17,17 @@ $(document).ready(function() {
 		});
 	});
 
+	// 검색버튼에 이벤트 연결
 	$("#btnSearch").click(function(){
 		$.ajax({
-			type:"GET",							// GET or POST
-			url:"/getSearchResult.baron",				// 호출할 URL
+			type:"GET",
+			url:"/getSearchResult.baron",
 			data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
-			datatype:"xml",						// html, xml, json, jsonp, script, text
-			timeout:10000,
-			error:function() {					// Ajax error handler
+			datatype:"xml",
+			error:function() {
 				alert('ajax failed');
 			},
-			success:function(data, status) {	// Ajax complete handelr
+			success:function(data, status) {
 				$('.listArea').empty().append(data).find('div').each(function(index) {
 					setEventSubject($(this));
 				})
@@ -35,18 +36,20 @@ $(document).ready(function() {
 	});
 });
 
-
+/**
+ * 조회된 과목리스트에 이벤트를 연결시킨다.
+ * @param subject : 과목
+ */
 function setEventSubject(subject) {
 	$(subject).on({
 	  click: function(e) {		
 			var subjectCode = $(this).find('#subjectCode').val();
 			$.ajax({
-				type:"GET",							// GET or POST
-				url:"/getLineEvaluation.baron",			// URL
+				type:"GET",
+				url:"/getLineEvaluation.baron",
 				data:"subjectCode=" + subjectCode,
 				datatype:"xml",
-				timeout:10000,
-				error:function() {					// Ajax error handler
+				error:function() {
 					alert('ajax failed');
 				},
 				success:function(data, status) {
@@ -58,14 +61,14 @@ function setEventSubject(subject) {
 	  dblclick: function() {
 			var subjectCode = $(this).find("#subjectCode").val();
 			$.ajax({
-	            type:"GET",                         // GET or POST
-	            url:"/registerSubject.baron",               // 호출할 URL
+	            type:"GET",
+	            url:"/registerSubject.baron",
 	            data:"subjectCode=" + subjectCode + "&timetableNo=" + 1,
-	            datatype:"xml",                     // html, xml, json, jsonp, script, text
-	            error:function() {                  // Ajax error handler
+	            datatype:"xml",
+	            error:function() {
 	                alert('ajax failed');
 	            },
-	            success:function(data, status) {    // Ajax complete handelr
+	            success:function(data, status) {
 	                $("#cell0_0").empty().append(subjectCode);
 	            }
 	        });

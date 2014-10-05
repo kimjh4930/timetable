@@ -8,4 +8,6 @@ public interface SampleDAO {
 
 	LineEvaluationModel selectLineEvaluation(int subjectCode);
 
+	int selectMemberCount(int userId);
+
 }

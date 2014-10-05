@@ -33,6 +33,13 @@ CREATE TABLE IF NOT EXISTS tt_personal (
 INSERT INTO tt_personal( idx_no, member_srl, semester, tt_no, subject_list, insertdate )
 VALUES ( 1, 3465, '2014_2', 1, 'XAA2031001,0001250001,0001248001', '2012-02-12 11:22:10' );
 
+CREATE TABLE IF NOT EXISTS xe_member (  
+	member_srl int NOT NULL PRIMARY KEY,
+	user_id varchar(80) NOT NULL
+);
+
+INSERT INTO xe_member (member_srl, user_id)
+VALUES (14660, 'zakarose');
 
 CREATE TABLE  IF NOT EXISTS tt_line_evaulation(
 	le_no int not null primary key,
@@ -45,3 +52,4 @@ CREATE TABLE  IF NOT EXISTS tt_line_evaulation(
 
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
 VALUES ( 3, 1234567, 3894, "이거좋아용", 9.5, '2012-02-12 11:22:10' );
+

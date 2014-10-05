@@ -37,4 +37,9 @@
     		le.subject_code = #{subjectCode}
     </select>
     
+    <select id="selectMember" resultType="int" parameterType="int">
+        SELECT count(*)
+        FROM xe_member
+    </select>
+    
 </mapper>

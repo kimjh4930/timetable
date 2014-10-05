@@ -2,6 +2,8 @@ package com.baron.sample.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,17 @@ public class SampleDAOImplTest {
 
 		//Then
 		assertEquals(2, actual);
+	}
+	
+	@Test
+	public void testSelectMember() throws Exception {
+		//Given
+		int memberSerial = 14660;
+
+		//When
+		int actual = dao.selectMemberCount(memberSerial);
+
+		//Then
+		assertEquals(1, actual);
 	}
 }

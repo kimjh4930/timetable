@@ -1,8 +1,6 @@
 package com.baron.sample.dao;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +53,12 @@ public class SampleDAOImpl implements SampleDAO {
 		model.setItemList(itemList);
 		
 		return model;*/
+	}
+	
+	
+	@Override
+	public List<LineEvaluationItem> selectLineEvaluationItem(int subjectCode) {
+		return session.selectList(NAMESPACE + "selectLineEvaluationItem", subjectCode);
 	}
 	
 	@Override

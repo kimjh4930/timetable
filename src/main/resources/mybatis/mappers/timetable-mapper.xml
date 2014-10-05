@@ -24,9 +24,9 @@
     		le.subject_code = #{subjectCode}
     </select>
     
-        <select id="selectLineEvaluationItem" resultType="lineEvaluationItem" parameterType="int">
+    <select id="selectLineEvaluationItem" resultType="lineEvaluationItem" parameterType="int">
     	SELECT
-    		le.member_srl as userId,
+    		m.user_id as userId,
     		le.comment as comment,
     		le.star_score as starScore
     	FROM 

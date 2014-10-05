@@ -4,15 +4,15 @@
 
 <div class="lineEvaluationLeftArea">${lineEvaluation.subjectName}</div>
 <div class="lineEvaluationRightArea">${lineEvaluation.professorName} ±³¼ö´Ô</div>
-<div class="lineEvaluationLeftArea">${lineEvaluation.starScore} </div>
+<div class="lineEvaluationLeftArea">${lineEvaluation.avgStarScore} </div>
 <table id="lineEvaluationTable">
 	<thead>
 	</thead>
 	<tbody>
 		<c:forEach items="${lineEvaluation.itemList}" var="item">
 			<tr>
-				<td>${item.id}</td>
-				<td>${item.coment}</td>
+				<td>${item.userId}</td>
+				<td>${item.comment}</td>
 				<td>${item.starScore}</td>
 			</tr>
 		</c:forEach>

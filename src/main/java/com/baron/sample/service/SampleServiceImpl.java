@@ -25,7 +25,7 @@ public class SampleServiceImpl implements SampleService {
 	private PersonalDAO personalDAO;
 
 	@Override
-	public LineEvaluationModel getLineEvaluation(int subjectCode) {
+	public LineEvaluationModel getLineEvaluation(String subjectCode) {
 		return sampleDAO.selectLineEvaluation(subjectCode);
 	}
 

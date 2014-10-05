@@ -9,10 +9,10 @@ public interface SampleDAO {
 
 	int selectTest();
 
-	LineEvaluationModel selectLineEvaluation(int subjectCode);
+	LineEvaluationModel selectLineEvaluation(String subjectCode);
 
 	int selectMemberCount(int userId);
 
-	List<LineEvaluationItem> selectLineEvaluationItem(int subjectCode);
+	List<LineEvaluationItem> selectLineEvaluationItem(String subjectCode);
 
 }

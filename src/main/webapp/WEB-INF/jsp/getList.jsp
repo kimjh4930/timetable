@@ -9,7 +9,7 @@
 	<input type="hidden" value="0000558002" name="subjectCode" id="subjectCode">
 </div> -->
 <div class="list searchResult" >°¼°¼
-    <input type="hidden" value="0000558002" name="subjectCode" id="subjectCode">
+    <input type="hidden" value="0001701002" name="subjectCode" id="subjectCode">
 </div>
 
 <c:forEach items="${subjectResultList}" var="subjectResult">

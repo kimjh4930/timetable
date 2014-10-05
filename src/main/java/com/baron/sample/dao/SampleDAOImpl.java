@@ -1,11 +1,9 @@
 package com.baron.sample.dao;
 
 import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.baron.sample.model.LineEvaluationItem;
 import com.baron.sample.model.LineEvaluationModel;
 
@@ -23,41 +21,13 @@ public class SampleDAOImpl implements SampleDAO {
 	}
 	
 	@Override
-	public LineEvaluationModel selectLineEvaluation(int subjectCode) {
-		
-		
-		return session.selectOne(NAMESPACE);
-		
-		
-/*
-		LineEvaluationModel model = new LineEvaluationModel();
-		model.setSubjectName("3급한국어회화(2)");
-		model.setProfessorName("김한석");
-		model.setStarScore(9.34f);
-		model.setSubjectCode(subjectCode);
-		
-		List<LineEvaluationItem> itemList=new ArrayList<LineEvaluationItem>();
-		
-		LineEvaluationItem item1 = new LineEvaluationItem();
-		item1.setId("k123");
-		item1.setComent("good!");
-		item1.setStarScore(10f);
-		
-		LineEvaluationItem item2 = new LineEvaluationItem();
-		item2.setId("shio");
-		item2.setComent("bad!");
-		item2.setStarScore(1f);
-		
-		itemList.add(item1);
-		itemList.add(item2);
-		model.setItemList(itemList);
-		
-		return model;*/
+	public LineEvaluationModel selectLineEvaluation(String subjectCode) {
+		return session.selectOne(NAMESPACE + "selectLineEvaluation", subjectCode);
 	}
 	
 	
 	@Override
-	public List<LineEvaluationItem> selectLineEvaluationItem(int subjectCode) {
+	public List<LineEvaluationItem> selectLineEvaluationItem(String subjectCode) {
 		return session.selectList(NAMESPACE + "selectLineEvaluationItem", subjectCode);
 	}
 	

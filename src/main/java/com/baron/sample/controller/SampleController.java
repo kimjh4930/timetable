@@ -29,7 +29,7 @@ public class SampleController {
 	}
 	
 	@RequestMapping("/getLineEvaluation.baron")
-	public String getLineEvaluation(Model model, int subjectCode) {
+	public String getLineEvaluation(Model model, String subjectCode) {
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
 		

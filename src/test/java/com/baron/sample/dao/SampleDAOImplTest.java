@@ -1,9 +1,9 @@
 package com.baron.sample.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,25 +28,25 @@ public class SampleDAOImplTest {
 	@Test
 	public void testSelectLineEvaluation() throws Exception {
 		//Given
-		int subjectCode = 1234567;
+		String subjectCode = "0001701002";
 
 		//When
 		LineEvaluationModel actual = dao.selectLineEvaluation(subjectCode);
 
 		//Then
-		assertEquals(2, actual);
+		assertNotNull(actual);
 	}
 	
 	@Test
 	public void testSelectLineEvaluationItem() throws Exception {
 		//Given
-		int subjectCode = 1234567;
+		String subjectCode = "0001701002";
 
 		//When
 		List<LineEvaluationItem> actual = dao.selectLineEvaluationItem(subjectCode);
 
 		//Then
-		assertEquals(2, actual);
+		assertNotNull(actual);
 	}
 	
 	@Test

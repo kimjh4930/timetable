@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="timetable">
 
+	<resultMap id="lineEvaluationModelResult" type="lineEvaluationModel">
+		<result column="code" property="subjectCode"/>
+		<result column="title" property="subjectName"/>
+		<result column="professor" property="professorName"/>
+		<result column="avgStarScore" property="avgStarScore"/>
+		<collection column="code" property="itemList" select="selectLineEvaluationItem"/>
+	</resultMap>
+	
+	<resultMap id="lineEvaluationItemResult" type="lineEvaluationItem">
+		<result column="le_no" property="indexNo"/>
+		<result column="user_id" property="userId"/>
+		<result column="comment" property="comment"/>
+		<result column="star_score" property="starScore"/>
+	</resultMap>
+
     <select id="selectPersonalData" resultType="personalModel" parameterType="personalCommandModel">
         SELECT idx_no as indexNo, member_srl as memberCode, semester as semester, tt_no as timetableNo,
         subject_list as subjectStr, insertdate as insertDate, updatedate as updateDate
@@ -9,26 +24,28 @@
         WHERE member_srl = #{memberCode} and tt_no = #{timetableNo}
     </select>
     
-    <select id="selectLineEvaluation" resultType="lineEvaluationModel" parameterType="int">
+    <select id="selectLineEvaluation" resultMap="lineEvaluationModelResult" parameterType="String">
     	SELECT
-    		le.le_no as indexNo, 
-    		le.subject_code as subjectCode,
-    		s.title as subjectName,
-    		s.professor as professorName,
-    		le.star_score as aveStarScore
+    		code,
+    		title,
+    		professor,
+    		(
+    			SELECT AVG(star_score)
+    			FROM tt_line_evaulation
+    			WHERE subject_code = #{subjectCode}
+    		) as avgStarScore
     	FROM 
-    		tt_line_evaulation le, tt_subject s
+    		tt_subject
     	WHERE
-    		le.subject_code = s.code
-    	AND
-    		le.subject_code = #{subjectCode}
+    		code = #{subjectCode}
     </select>
     
-    <select id="selectLineEvaluationItem" resultType="lineEvaluationItem" parameterType="int">
+    <select id="selectLineEvaluationItem" resultMap="lineEvaluationItemResult" parameterType="String">
     	SELECT
-    		m.user_id as userId,
-    		le.comment as comment,
-    		le.star_score as starScore
+    		le.le_no,
+    		m.user_id,
+    		le.comment,
+    		le.star_score
     	FROM 
     		tt_line_evaulation le, xe_member m
     	WHERE

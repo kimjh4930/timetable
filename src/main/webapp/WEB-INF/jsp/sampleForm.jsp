@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <!-- c태그를 쓸 수 있음. -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,14 +100,14 @@
 							<th>금</th>
 						</tr>
 						<tr>
-							<td>&nbsp;</td>
+							<td id="cell0_0">&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td>&nbsp;</td>
+							<td id="cell1_0">&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>

@@ -4,16 +4,35 @@
 <!-- <div class="list" >³Ä³Ä
 	<input type="hidden" value="0000558001" name="subjectCode" id="subjectCode">
 </div>
-<div class="list" >°¼°¼
-	<input type="hidden" value="0000558002" name="subjectCode" id="subjectCode">
-</div>
 <div class="list" >asd
 	<input type="hidden" value="0000558002" name="subjectCode" id="subjectCode">
 </div> -->
+<div class="list searchResult" >°¼°¼
+    <input type="hidden" value="0000558002" name="subjectCode" id="subjectCode">
+</div>
 
 <c:forEach items="${subjectResultList}" var="subjectResult">
-	<div class="list" >
+	<div class="list searchResult" >
 		${subjectResult.subjectName}${subjectResult.subjectName}${subjectResult.subjectName}
 	</div>
 </c:forEach>
 
+<script>
+$(".searchResult").each(function() {
+	$(this).click(function() {
+		var subjectCode = $(this).find("#subjectCode").val();
+		$.ajax({
+            type:"GET",                         // GET or POST
+            url:"/registerSubject.baron",               // È£ÃâÇÒ URL
+            data:"subjectCode=" + subjectCode,
+            datatype:"xml",                     // html, xml, json, jsonp, script, text
+            error:function() {                  // Ajax error handler
+                alert('ajax failed');
+            },
+            success:function(data, status) {    // Ajax complete handelr
+                $("#cell0_0").empty().append(subjectCode);
+            }
+        });
+	});
+});
+</script>

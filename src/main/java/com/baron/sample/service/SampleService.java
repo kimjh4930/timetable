@@ -11,4 +11,6 @@ public interface SampleService {
 
 	List<SubjectResultModel> getSubjectResultList(String searchType, String searchKey);
 
+	void registerSubject(String subjectCode, int memberCode, int timetableNo);
+
 }

@@ -2,6 +2,7 @@ package com.baron.sample.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import com.baron.sample.model.LineEvaluationModel;
 
 @Repository
 public class SampleDAOImpl implements SampleDAO {
-	private static final String NAMESPACE = "com.baron.sample.SampleModel.";
+	private static final String NAMESPACE = "timetable.";
 
 	@Autowired
 	private SqlSession session;
@@ -49,5 +50,10 @@ public class SampleDAOImpl implements SampleDAO {
 		model.setItemList(itemList);
 		
 		return model;
+	}
+	
+	@Override
+	public int selectMemberCount(int userId) {
+		return session.selectOne(NAMESPACE + "selectMember");
 	}
 }

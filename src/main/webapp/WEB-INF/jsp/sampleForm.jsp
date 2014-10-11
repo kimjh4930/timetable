@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <!-- cíƒœê·¸ë¥¼ ì“¸ ìˆ˜ ìžˆìŒ. -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Sample Form</title>
-<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
-<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
-<script type="text/javascript" src="/resources/js/common.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Sample Form</title>
+	<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+	<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="/resources/js/common.js"></script>
 </head>
-
-
 <body>
 	<header id="main_header">
 		<h3>header</h3>
@@ -22,10 +21,10 @@
 					<option value="fitst">1</option>
 					<option value="second">2</option>
 					<option value="third">3</option>
-				</select> ¹øÂ° ½Ã°£Ç¥
+				</select> ë²ˆì§¸ ì‹œê°„í‘œ
 				<button type="button" class="reset_bt" name="reset"></button>
 				<button type="button" class="saveexel_bt" name="SaveExcel"></button>
-				<br> ÃÑ 0ÇÐÁ¡ Àü°ø 0ÇÐÁ¡ ±³¾ç 0ÇÐÁ¡ ±âÅ¸ 0ÇÐÁ¡
+				<br> ì´ 0í•™ì  ì „ê³µ 0í•™ì  êµì–‘ 0í•™ì  ê¸°íƒ€ 0í•™ì 
 			</article>
 			<article class="timeTableArea">
 				<div class="LeftTableFrame">
@@ -34,57 +33,57 @@
 							<th>&nbsp;</th>
 						</tr>
 						<tr>
-							<td>0±³½Ã 8:30
-								<div class="daytimeMark">ÁÖ</div>
+							<td>0êµì‹œ 8:30
+								<div class="daytimeMark">ì£¼</div>
 							</td>
 						</tr>
 						<tr>
-							<td>1±³½Ã 9:30</td>
+							<td>1êµì‹œ 9:30</td>
 						</tr>
 						<tr>
-							<td>2±³½Ã 10:30</td>
+							<td>2êµì‹œ 10:30</td>
 						</tr>
 						<tr>
-							<td>3±³½Ã 11:30</td>
+							<td>3êµì‹œ 11:30</td>
 						</tr>
 						<tr>
-							<td>4±³½Ã 12:30</td>
+							<td>4êµì‹œ 12:30</td>
 						</tr>
 						<tr>
-							<td>5±³½Ã 1:30</td>
+							<td>5êµì‹œ 1:30</td>
 						</tr>
 						<tr>
-							<td>6±³½Ã 2:30</td>
+							<td>6êµì‹œ 2:30</td>
 						</tr>
 						<tr>
-							<td>7±³½Ã 3:30</td>
+							<td>7êµì‹œ 3:30</td>
 						</tr>
 						<tr>
-							<td>8±³½Ã 4:30</td>
+							<td>8êµì‹œ 4:30</td>
 						</tr>
 						<tr>
-							<td>9±³½Ã 5:30</td>
+							<td>9êµì‹œ 5:30</td>
 						</tr>
 						<tr>
-							<td>1±³½Ã 6:00
-								<div class="daytimeMark">¾ß</div>
+							<td>1êµì‹œ 6:00
+								<div class="daytimeMark">ì•¼</div>
 							</td>
 
 						</tr>
 						<tr>
-							<td>2±³½Ã 6:55</td>
+							<td>2êµì‹œ 6:55</td>
 						</tr>
 						<tr>
-							<td>3±³½Ã 7:50</td>
+							<td>3êµì‹œ 7:50</td>
 						</tr>
 						<tr>
-							<td>4±³½Ã 8:45</td>
+							<td>4êµì‹œ 8:45</td>
 						</tr>
 						<tr>
-							<td>5±³½Ã 9:40</td>
+							<td>5êµì‹œ 9:40</td>
 						</tr>
 						<tr>
-							<td>6±³½Ã 10:35</td>
+							<td>6êµì‹œ 10:35</td>
 						</tr>
 
 					</table>
@@ -92,21 +91,21 @@
 				<div class="RightTableFrame">
 					<table class="myTable">
 						<tr>
-							<th>¿ù</th>
-							<th>È­</th>
-							<th>¼ö</th>
-							<th>¸ñ</th>
-							<th>±Ý</th>
+							<th>ì›”</th>
+							<th>í™”</th>
+							<th>ìˆ˜</th>
+							<th>ëª©</th>
+							<th>ê¸ˆ</th>
 						</tr>
 						<tr>
-							<td>&nbsp;</td>
+							<td id="cell0_0">&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
-							<td>&nbsp;</td>
+							<td id="cell1_0">&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
@@ -216,24 +215,45 @@
 		</section>
 		<section id="right_section">
 			<article class="searchArea">
-				Ä·ÆÛ½º±¸ºÐ <select class="CampusSort">
-					<option value="songdo">¼Ûµµ</option>
-					<option value="jemulpo">Á¦¹°Æ÷</option>
-				</select> ÇÐ±â¼±ÅÃ <select class="semesterSelect">
-					<option value="semeste">2014³â2ÇÐ±â</option>
-				</select><br> ÀÌ¼ö±¸ºÐ<select class="section">
-					<option value="section">¼±ÅÃ</option>
-				</select> <select class="major">
-					<option value="major">¼±ÅÃ</option>
-				</select> ¿äÀÏ<select class="day">
-					<option value="monday">¿ù</option>
-					<option value="tuesday ">È­</option>
-					<option value="wednesday">¼ö</option>
-					<option value="thursday">¸ñ</option>
-					<option value="friday">±Ý</option>
+				ìº í¼ìŠ¤êµ¬ë¶„ 
+				<select class="CampusSort">
+					<option value="songdo">ì†¡ë„</option>
+					<option value="jemulpo">ì œë¬¼í¬</option>
+				</select>
+				
+				í•™ê¸°ì„ íƒ 
+				<select class="semesterSelect">
+					<option value="semeste">2014ë…„2í•™ê¸°</option>
+				</select><br>
+				
+				í•™ê³¼ì„ íƒ
+				<select class="department">
+			        <option value="department">ì„ íƒ</option>
+				    <c:forEach items="${departmentList}" var="department">
+				        <option> ${department} </option>
+				    </c:forEach>
+			    </select>
+				
+				ì´ìˆ˜êµ¬ë¶„
+				<select class="section">
+					<option value="section">ì„ íƒ</option>
+				</select>
+				
+				<select class="major">
+					<option value="major">ì„ íƒ</option>
+				</select>
+				
+				ìš”ì¼
+				<select class="day">
+					<option value="monday">ì›”</option>
+					<option value="tuesday ">í™”</option>
+					<option value="wednesday">ìˆ˜</option>
+					<option value="thursday">ëª©</option>
+					<option value="friday">ê¸ˆ</option>
 				</select><br>
 				<form>
-					ÇÐ³â <input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked"> <label for="ch1"
+					í•™ë…„ 
+					<input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked"> <label for="ch1"
 						class="css-label">1</label> <input type="checkbox" id="ch2"
 						class="css-checkbox" name="year" value="2" checked="checked">
 					<label for="ch2" class="css-label">2</label> <input type="checkbox"
@@ -244,10 +264,10 @@
 						class="css-label">4</label>
 					<input type="text" name="searchBox" id="searchBox">
 					<select class="searchSelect" style="float: right;" id="selectSearch">
-						<option value="subject">°ú¸ñ¸í</option>
-						<option value="professor">±³¼ö¸í</option>
+						<option value="subject">ê³¼ëª©ëª…</option>
+						<option value="professor">êµìˆ˜ëª…</option>
 					</select> 
-					<button type="button" class="search_bt" name="°Ë»ö" id="btnSearch">°Ë»ö</button>
+					<button type="button" class="search_bt" name="ê²€ìƒ‰" id="btnSearch">ê²€ìƒ‰</button>
 				</form>
 				<div class="line"></div>
 				<br>
@@ -255,8 +275,8 @@
 					style="float: right;"></button>
 			</article>
 			<article class="subjectResultArea">
-				<div class="title1">±³°ú¸ñ¸í</div>
-				<div class="title2">ÀÌ¼ö±¸ºÐ ÇÐ³â/ÇÐÁ¡ ´ã´ç±³¼ö ½Ã°£/°­ÀÇ½Ç ºÏ¸¶Å©</div>
+				<div class="title1">êµê³¼ëª©ëª…</div>
+				<div class="title2">ì´ìˆ˜êµ¬ë¶„ í•™ë…„/í•™ì  ë‹´ë‹¹êµìˆ˜ ì‹œê°„/ê°•ì˜ì‹¤ ë¶ë§ˆí¬</div>
 				<div class="listArea"></div>
 			</article>
 		</section>

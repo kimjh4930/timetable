@@ -2,6 +2,11 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<!-- <typeAlias type="com.nhnent.admin.model.AdminModel"			alias="AdminModel" /> -->
+		<typeAlias type="com.baron.sample.model.PersonalModel"        alias="personalModel" />
+		<typeAlias type="com.baron.sample.model.PersonalCommandModel" alias="personalCommandModel" />
+		<typeAlias type="com.baron.sample.model.LineEvaluationModel"  alias="lineEvaluationModel" />
+		<typeAlias type="com.baron.sample.model.LineEvaluationItem"   alias="lineEvaluationItem" />
+		<typeAlias type="com.baron.sample.model.SubjectResultModel"   alias="subjectResultModel" />
+		<typeAlias type="com.baron.sample.model.SubjectCommandModel"  alias="subjectCommandModel" />
 	</typeAliases>
 </configuration>

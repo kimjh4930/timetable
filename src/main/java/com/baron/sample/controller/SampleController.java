@@ -18,7 +18,9 @@ public class SampleController {
 	private SampleService service;
 	
 	@RequestMapping("/sampleForm.baron")
-	public String viewSampleForm() {
+	public String viewSampleForm(Model model) {
+		List<String> departmentList = service.getDepartmentList();
+		model.addAttribute("departmentList", departmentList);
 		return "sampleForm";
 	}
 
@@ -29,7 +31,7 @@ public class SampleController {
 	}
 	
 	@RequestMapping("/getLineEvaluation.baron")
-	public String getLineEvaluation(Model model, int subjectCode) {
+	public String getLineEvaluation(Model model, String subjectCode) {
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
 		
@@ -44,4 +46,14 @@ public class SampleController {
 		return "getList";
 	}
 
+	@RequestMapping("/registerSubject.baron")
+	public String registerSubject(Model model, String subjectCode, int timetableNo) {
+		//List<SubjectResultModel> subjectResultList = service.getSubjectResultList(searchType, searchKey);//new ArrayList<SubjectResultModel>();
+		//model.addAttribute("subjectResultList", subjectResultList); //(key, value)
+		//getList의 자료를 받아옴
+		int memberCode = 000000;
+		service.registerSubject(subjectCode, memberCode, timetableNo);
+		
+		return "subjectCell";
+	}
 }

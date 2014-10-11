@@ -3,12 +3,13 @@ package com.baron.sample.model;
 import java.util.List;
 
 public class LineEvaluationModel {
+	private String subjectCode;
 	private String subjectName;
 	private String professorName;
-	private float starScore;
-	private int subjectCode;
+	private float avgStarScore;
 	private List<LineEvaluationItem> itemList;
-
+	
+	
 	public String getSubjectName() {
 		return subjectName;
 	}
@@ -25,19 +26,19 @@ public class LineEvaluationModel {
 		this.professorName = professorName;
 	}
 
-	public float getStarScore() {
-		return starScore;
+	public float getAvgStarScore() {
+		return avgStarScore;
 	}
 
-	public void setStarScore(float starScore) {
-		this.starScore = starScore;
+	public void setAvgStarScore(float avgStarScore) {
+		this.avgStarScore = avgStarScore;
 	}
 
-	public int getSubjectCode() {
+	public String getSubjectCode() {
 		return subjectCode;
 	}
 
-	public void setSubjectCode(int subjectCode) {
+	public void setSubjectCode(String subjectCode) {
 		this.subjectCode = subjectCode;
 	}
 
@@ -49,4 +50,5 @@ public class LineEvaluationModel {
 		this.itemList = itemList;
 	}
 
+	
 }

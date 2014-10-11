@@ -13,7 +13,8 @@
 
 <c:forEach items="${subjectResultList}" var="subjectResult">
 	<div class="list" >
-		${subjectResult.subjectName}${subjectResult.subjectName}${subjectResult.subjectName}
+		${subjectResult.subjectName}${subjectResult.subjectDivide}${subjectResult.grade}${subjectResult.credit}${subjectResult.professorName}${subjectResult.classTime}${subjectResult.classroom}
+        <!-- 교과목명 이수구분 학년/학점 담당교수 시간/강의실 북마크 -->	
 	</div>
 </c:forEach>
 

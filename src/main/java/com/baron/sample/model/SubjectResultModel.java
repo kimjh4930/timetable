@@ -4,6 +4,7 @@ public class SubjectResultModel {
 	private String subjectCode;
 	private String subjectName;
 	private String subjectDept;
+	private String subjectDivide;
 	private String grade;
 	private String credit;
 	private String professorName;
@@ -72,6 +73,14 @@ public class SubjectResultModel {
 
 	public void setClassroom(String classroom) {
 		this.classroom = classroom;
+	}
+
+	public String getSubjectDivide() {
+		return subjectDivide;
+	}
+
+	public void setSubjectDivide(String subjectDivide) {
+		this.subjectDivide = subjectDivide;
 	}
 
 }

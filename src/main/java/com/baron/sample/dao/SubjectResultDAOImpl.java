@@ -16,6 +16,7 @@ public class SubjectResultDAOImpl implements SubjectResultDAO{
 		model1.setSubjectCode("0X12345678");
 		model1.setSubjectName("인간과우주");
 		model1.setSubjectDept("교양");
+		model1.setSubjectDivide("교양선택");
 		model1.setGrade("1학년");
 		model1.setCredit("3학점");
 		model1.setProfessorName("최강훈");
@@ -27,6 +28,7 @@ public class SubjectResultDAOImpl implements SubjectResultDAO{
 		model2.setSubjectCode("0X12345678");
 		model2.setSubjectName("OTL론");
 		model2.setSubjectDept("교양");
+		model1.setSubjectDivide("전공필수");
 		model2.setGrade("1학년");
 		model2.setCredit("3학점");
 		model2.setProfessorName("모름");

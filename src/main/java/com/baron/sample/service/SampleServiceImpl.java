@@ -52,5 +52,7 @@ public class SampleServiceImpl implements SampleService {
 	public List<String> getDepartmentList() {
 		return sampleDAO.selectDepartment();
 	}
+	//학과선택했을 때 조회
+	//교양선택같은 상세 선택할 때 조회
 	
 }

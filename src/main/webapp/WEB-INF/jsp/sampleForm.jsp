@@ -227,20 +227,21 @@
 				</select><br>
 				
 				학과선택
-				<select class="department">
-			        <option value="department">선택</option>
+				<select class="department" id="departmentList">
+			        <option value="selectDefault" id="selectDefault" name="selectDefault">전공/교양 선택</option>
+			        <option value="subjectAll" id="subjectAll" name="subjectAll">전체</option>
+			        <option value="liberalArts" id="liberalArts" name="liberalArts">교양</option>
+			        <option value="teachingCourse" id="teachingCourse" name="teachingCourse">교직</option>
+			        <option value="generalCourse" id="generalCourse" name="generalCourse">일반선택</option>
+			        <option value="militaryCourse" id="militaryCourse" name="militaryCourse">군사학</option>
 				    <c:forEach items="${departmentList}" var="department">
-				        <option> ${department} </option>
+				        <option value="department" name="department" id="department"> ${department} </option>
 				    </c:forEach>
 			    </select>
 				
 				이수구분
-				<select class="section">
+				<select class="section" id="completionDivision">
 					<option value="section">선택</option>
-				</select>
-				
-				<select class="major">
-					<option value="major">선택</option>
 				</select>
 				
 				요일
@@ -253,12 +254,12 @@
 				</select><br>
 				<form>
 					학년 
-					<input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked"> <label for="ch1"
-						class="css-label">1</label> <input type="checkbox" id="ch2"
-						class="css-checkbox" name="year" value="2" checked="checked">
-					<label for="ch2" class="css-label">2</label> <input type="checkbox"
-						id="ch3" class="css-checkbox" name="year" value="3"
-						checked="checked"> <label for="ch3" class="css-label">3</label>
+					<input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked">
+					   <label for="ch1"	class="css-label">1</label>
+					   <input type="checkbox" id="ch2"	class="css-checkbox" name="year" value="2" checked="checked">
+					   <label for="ch2" class="css-label">2</label>
+					   <input type="checkbox" id="ch3" class="css-checkbox" name="year" value="3" checked="checked">
+					   <label for="ch3" class="css-label">3</label>
 					<input type="checkbox" id="ch4" class="css-checkbox" name="year"
 						value="4" checked="checked"> <label for="ch4"
 						class="css-label">4</label>

@@ -88,5 +88,22 @@
             tt_subject
         GROUP BY major
     </select>
+    <select id="searchSubjectByDepartment" resultType="subjectResultModel" parameterType="subjectCommandModel">
+        SELECT
+            code AS subjectCode,
+            title AS subjectName,
+            section AS subjectDivide,
+            major AS subjectDept,
+            classyear AS grade,
+            credit AS credit,
+            professor AS professorName,
+            classhour AS classTime,
+            classroom AS classroom
+        FROM 
+            tt_subject
+        WHERE
+            1 = 1
+    </select>
+    
     
 </mapper>

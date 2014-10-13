@@ -43,13 +43,62 @@ $(document).ready(function() {
 			searchSubject();
 		}
 	});
-	
 	//과목선택한거에 따라서 이수구분 추가
 	
 	
 	
+	/*if($("#departmentList option:selected").val() == "liberalArts"){
+		$("#liberalArts").append("<option value=essential>교양필수")
+	}*/
+	/*
+	 * 교양 - 교양필수, 교양선택
+	 * 교직 - 교직
+	 * 일선 - 일선
+	 * 전공 - 전공기초, 전공필수, 전공선택, 기초과학
+	 * 군사학 - 군사학
+	 */
+	$("#departmentList").click(function(){
+		$("#completionDivision").empty();
+		$("#completionDivision").append("<option value=select id=select>선택</option>");
+		if($("#departmentList option:selected").val() == "liberalArts"){
+			//교양
+			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
+			$("#completionDivision").append("<option value=liberalSelect id=liberalSelect>교양선택</option>");
+		}else if($("#departmentList option:selected").val() == "department"){
+			//전공 - 기초과학, 전공기초, 전공필수, 전공선택
+			$("#completionDivision").append("<option value=basicScience id=basicScience>기초과학</option>");
+			$("#completionDivision").append("<option value=basicMajor id=basicMajor>전공기초</option>");
+			$("#completionDivision").append("<option value=requiredMajor id=requiredMajor>전공필수</option>");
+			$("#completionDivision").append("<option value=choosedMajor id=choosedMajor>전공선택</option>");
+		}else if($("#departmentList option:selected").val() == "teachingCourse"){
+			//교직 - 교직
+			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
+		}else if($("#departmentList option:selected").val() == "generalCourse"){
+			//일선 - 일반선택
+			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
+		}else if($("#departmentList option:selected").val() == "militaryCourse"){
+			//군사학 - 군사학
+			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
+		}else if($("#departmentList option:selected").val() == "subjectAll"){
+			//전체선택
+			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
+			$("#completionDivision").append("<option value=liberalSelect id=liberalSelect>교양선택</option>");
+			$("#completionDivision").append("<option value=basicScience id=basicScience>기초과학</option>");
+			$("#completionDivision").append("<option value=basicMajor id=basicMajor>전공기초</option>");
+			$("#completionDivision").append("<option value=requiredMajor id=requiredMajor>전공필수</option>");
+			$("#completionDivision").append("<option value=choosedMajor id=choosedMajor>전공선택</option>");
+			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
+			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
+			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
+		}else{
+			//그외에는 반응 안함
+		}
+	});
 });
 
+function addOptions(){
+	
+}
 
 function searchSubject() {
 	$.ajax({

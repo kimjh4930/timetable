@@ -15,13 +15,31 @@ CREATE TABLE IF NOT EXISTS tt_subject (
 );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
-VALUES ( '0001701002', '전선', '문헌정보학과',  '저작권', 4, 3, '이문학', '월7,화3~4', '1301330', '제물포', '' );
+VALUES ( '0001701002', '전공선택', '문헌정보학과',  '저작권', 4, 3, '이문학', '월7,화3~4', '1301330', '제물포', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
 VALUES ( 'YAA9011001', '교직', '교직',  '교육심리', 2, 2, '양태연', '화5~6', 'SN204', '송도', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
-VALUES ( '0X12345678', '교양선택', '교양',  '인간과우주', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+VALUES ( '0X12345678', '교양필수', '교양',  '인간과우주', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X12374568', '교양선택', '교양',  '인간과우주', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X12745678', '전공기초', '컴퓨터공학부',  '컴퓨터네트워크보안', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X12397578', '전공필수', '컴퓨터공학부',  '컴퓨터네트워크', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X6345678', '전공선택', '컴퓨터공학부',  '데이터베이스', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X123nnm78', '일반선택', '군사학',  '인터넷특론', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
+
+INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
+VALUES ( '0X1123678', '군사학', '군사학',  '군사학(2)', 2, 3, '정연철', '화1~3', 'SN204', '송도', '' );
 
 
 CREATE TABLE IF NOT EXISTS tt_personal (

@@ -14,5 +14,4 @@ public interface SampleService {
 	void registerSubject(String subjectCode, int memberCode, int timetableNo);
 
 	List<String> getDepartmentList();
-
 }

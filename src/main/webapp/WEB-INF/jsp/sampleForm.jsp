@@ -22,7 +22,7 @@
 					<option value="second">2</option>
 					<option value="third">3</option>
 				</select> 번째 시간표
-				<button type="button" class="reset_bt" name="reset"></button>
+				<button type="button" class="reset_bt" id="btnReset" name="reset"></button>
 				<button type="button" class="saveexel_bt" name="SaveExcel"></button>
 				<br> 총 0학점 전공 0학점 교양 0학점 기타 0학점
 			</article>
@@ -276,9 +276,28 @@
 					style="float: right;"></button>
 			</article>
 			<article class="subjectResultArea">
-				<div class="title1">교과목명</div>
-				<div class="title2">이수구분 학년/학점 담당교수 시간/강의실 북마크</div>
-				<div class="listArea"></div>
+				<table>
+                    <colgroup>
+                        <col width="150">
+                        <col width="60">
+                        <col width="70">
+                        <col width="60">
+                        <col width="100">
+                        <col width="50">
+                    </colgroup>
+				    <thead>
+                        <tr class="title2">
+                            <td>교과목명</td>
+                            <td>이수구분</td>
+                            <td>학년/학점</td>
+                            <td>담당교수</td>
+                            <td>시간/강의실</td>
+                            <td>북마크</td>
+                        </tr>
+				    </thead>
+				    <tbody class="listArea">
+				    </tbody>
+				</table>
 			</article>
 		</section>
 	</div>

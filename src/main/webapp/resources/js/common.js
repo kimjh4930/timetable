@@ -94,6 +94,11 @@ $(document).ready(function() {
 			//그외에는 반응 안함
 		}
 	});
+	
+	//초기화버튼
+	$("#btnReset").click(function() {
+
+	});
 });
 
 function addOptions(){
@@ -105,16 +110,15 @@ function searchSubject() {
 		type:"GET",							// GET or POST
 		url:"/getSearchResult.baron",				// 호출할 URL
 		data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
-		datatype:"xml",						// html, xml, json, jsonp, script, text
-		timeout:10000,
 		error:function() {					// Ajax error handler
 			alert('ajax failed');
 		},
 		success:function(data, status) {	// Ajax complete handelr
-			$('.listArea').empty().append(data).find('div').each(function(index) {
+			$('.listArea').empty().append(data);
+			/*$('.listArea').empty().append(data).find('div').each(function(index) {
 				
 
-			})
+			})*/
 		}
 	});
 }

@@ -13,6 +13,10 @@ body {
 	font-weight: bold;
 }
 
+table {
+	border-collapse: collapse;
+}
+
 #main_header {
 	width: 980px;
 	height: 180px;
@@ -232,18 +236,8 @@ body {
 	padding-bottom: 3px;
 }
 
-#content>#right_section>.subjectResultArea>.title2 {
-	width: 320px;
-	height: 17px;
-	background-color: #565757;
-	font-size: 11px;
-	font-weight: bold;
-	color: white;
-	float: right;
-	word-spacing: 10px;
-	padding-top: 5px;
-	padding-bottom: 3px;
-}
+.subjectResultArea thead tr {height:25px;background-color:#565757;font-size:11px;font-weight: bold;color: white;word-spacing:10px;padding-top:5px;padding-bottom:3px;text-align: center;}
+.subjectResultArea tbody tr {height:25px;font-size:12px;font-weight: bold;word-spacing:10px;padding-top:5px;padding-bottom:3px;text-align: center;border-bottom: 1px solid white;}
 
 #content>#right_section>.subjectResultArea>.listArea {
 	width: 490px;

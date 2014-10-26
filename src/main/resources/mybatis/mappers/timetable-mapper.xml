@@ -3,60 +3,79 @@
 <mapper namespace="timetable">
 
 	<resultMap id="lineEvaluationModelResult" type="lineEvaluationModel">
-		<result column="code" property="subjectCode"/>
-		<result column="title" property="subjectName"/>
-		<result column="professor" property="professorName"/>
-		<result column="avgStarScore" property="avgStarScore"/>
-		<collection column="code" property="itemList" select="selectLineEvaluationItem"/>
-	</resultMap>
-	
-	<resultMap id="lineEvaluationItemResult" type="lineEvaluationItem">
-		<result column="le_no" property="indexNo"/>
-		<result column="user_id" property="userId"/>
-		<result column="comment" property="comment"/>
-		<result column="star_score" property="starScore"/>
+		<result column="code" property="subjectCode" />
+		<result column="title" property="subjectName" />
+		<result column="professor" property="professorName" />
+		<result column="avgStarScore" property="avgStarScore" />
+		<collection column="code" property="itemList"
+			select="selectLineEvaluationItem" />
 	</resultMap>
 
-    <select id="selectPersonalData" resultType="personalModel" parameterType="personalCommandModel">
-        SELECT idx_no as indexNo, member_srl as memberCode, semester as semester, tt_no as timetableNo,
-        subject_list as subjectStr, insertdate as insertDate, updatedate as updateDate
-        FROM tt_personal
-        WHERE member_srl = #{memberCode} and tt_no = #{timetableNo}
-    </select>
-    
-    <select id="selectLineEvaluation" resultMap="lineEvaluationModelResult" parameterType="String">
-    	SELECT
-    		code,
-    		title,
-    		professor,
-    		(
-    			SELECT AVG(star_score)
-    			FROM tt_line_evaulation
-    			WHERE subject_code = #{subjectCode}
-    		) as avgStarScore
-    	FROM 
-    		tt_subject
-    	WHERE
-    		code = #{subjectCode}
-    </select>
-    
-    <select id="selectLineEvaluationItem" resultMap="lineEvaluationItemResult" parameterType="String">
-    	SELECT
-    		le.le_no,
-    		m.user_id,
-    		le.comment,
-    		le.star_score
-    	FROM 
-    		tt_line_evaulation le, xe_member m
-    	WHERE
-    		le.member_srl = m.member_srl
-    	AND
-    		le.subject_code = #{subjectCode}
-    </select>
-    
-    <select id="selectMember" resultType="int" parameterType="int">
-        SELECT count(*)
-        FROM xe_member
-    </select>
-    
+	<resultMap id="lineEvaluationItemResult" type="lineEvaluationItem">
+		<result column="le_no" property="indexNo" />
+		<result column="user_id" property="userId" />
+		<result column="comment" property="comment" />
+		<result column="star_score" property="starScore" />
+	</resultMap>
+
+	<select id="selectPersonalData" resultType="personalModel"
+		parameterType="personalCommandModel">
+		SELECT idx_no as indexNo, member_srl as memberCode,
+		semester as semester,
+		tt_no as timetableNo,
+		subject_list as subjectStr,
+		insertdate as insertDate, updatedate as updateDate
+		FROM tt_personal
+		WHERE member_srl = #{memberCode} and tt_no = #{timetableNo}
+	</select>
+
+	<select id="selectLineEvaluation" resultMap="lineEvaluationModelResult"
+		parameterType="String">
+		SELECT
+		code,
+		title,
+		professor,
+		(
+		SELECT AVG(star_score)
+		FROM
+		tt_line_evaulation
+		WHERE subject_code = #{subjectCode}
+		) as avgStarScore
+		FROM
+		tt_subject
+		WHERE
+		code = #{subjectCode}
+	</select>
+
+	<select id="selectLineEvaluationItem" resultMap="lineEvaluationItemResult"
+		parameterType="String">
+		SELECT
+		le.le_no,
+		m.user_id,
+		le.comment,
+		le.star_score
+		FROM
+		tt_line_evaulation le, xe_member m
+		WHERE
+		le.member_srl = m.member_srl
+		AND
+		le.subject_code = #{subjectCode}
+	</select>
+
+	<select id="selectMember" resultType="int" parameterType="int">
+		SELECT
+		count(*)
+		FROM xe_member
+	</select>
+
+	<insert id="insertLineEvaluationItem" parameterType="LineEvaluationItem">
+		<selectKey resultType="Integer" keyProperty="indexNo" order="BEFORE">
+			SELECT MAX(le_no)+1 FROM tt_line_evaulation
+		</selectKey>
+		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,
+		comment, star_score, insertdate)
+		VALUES (#{indexNo}, '0001701002', 3894, #{comment}, 8.0, '2012-02-12 11:22:10' );
+
+	</insert>
+
 </mapper>

@@ -35,4 +35,9 @@ public class SampleDAOImpl implements SampleDAO {
 	public int selectMemberCount(int userId) {
 		return session.selectOne(NAMESPACE + "selectMember");
 	}
+	
+	@Override
+	public void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem, String subjectCode){
+		session.insert(NAMESPACE + "insertLineEvaluationItem", lineEvaluationItem);
+	}
 }

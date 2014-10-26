@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	// 북마크버튼에 이벤트 연결
 	$(".bookbark_button").click(function() {
 		$.ajax({
@@ -10,8 +10,8 @@ $(document).ready(function() {
 				alert('ajax failed');
 			},
 			success:function(data, status) {
-				$('.listArea').empty().append(data).find('div').each(function(index) {
-					setEventSubject($(this));
+				$('.listArea').empty().append(data).find('div').each(function(index) { //리스트뿌리기
+					setEventSubject($(this)); //각각의 리스트
 				})
 			}
 		});
@@ -42,7 +42,7 @@ $(document).ready(function() {
  */
 function setEventSubject(subject) {
 	$(subject).on({
-	  click: function(e) {		
+		click: function(e) {		
 			var subjectCode = $(this).find('#subjectCode').val();
 			$.ajax({
 				type:"GET",
@@ -53,28 +53,58 @@ function setEventSubject(subject) {
 					alert('ajax failed');
 				},
 				success:function(data, status) {
-					$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageX).css('left',e.pageY);
-
+					var current=$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageY).css('left',e.pageX).find('form');
+						 addComment(current);
 				}
 			})
-	  }, 
-	  dblclick: function() {
+		}, 
+		dblclick: function() {
 			var subjectCode = $(this).find("#subjectCode").val();
 			$.ajax({
-	            type:"GET",
-	            url:"/registerSubject.baron",
-	            data:"subjectCode=" + subjectCode + "&timetableNo=" + 1,
-	            datatype:"xml",
-	            error:function() {
-	                alert('ajax failed');
-	            },
-	            success:function(data, status) {
-	                $("#cell0_0").empty().append(subjectCode);
-	            }
-	        });
-	  }
+				type:"GET",
+				url:"/registerSubject.baron",
+				data:"subjectCode=" + subjectCode + "&timetableNo=" + 1,
+				datatype:"xml",
+				error:function() {
+					alert('ajax failed');
+				},
+				success:function(data, status) {
+					$("#cell0_0").empty().append(subjectCode);
+				}
+			});
+		}
 	});
+	
+	//각 삭제
+	$(subject + '#delete').click( function(){alert("delete");});
+	
+	
 }
 
+//댓글 입력 이벤트
+function addComment(commentData) {
+	$(commentData).submit(function(){ //엔터 했을 경우
+		
+		var comment=$(input).val();
+
+		$.ajax({
+			type:"GET",
+			url:"/addLineEvaluation.baron",
+			data:"comment=" + comment,
+			datatype:"xml",
+			error:function() {
+				alert('ajax failed');
+			},
+			success:
+				function(data, status) {
+				var current=$('#lineEvaluationArea').empty().append(data).show().find('form');
+					
+				addComment(current); 
+				
+			}
+		});
+		return false;
+	});
+}
 
 

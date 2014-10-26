@@ -18,7 +18,9 @@ public class SampleController {
 	private SampleService service;
 	
 	@RequestMapping("/sampleForm.baron")
-	public String viewSampleForm() {
+	public String viewSampleForm(Model model) {
+		List<String> departmentList = service.getDepartmentList();
+		model.addAttribute("departmentList", departmentList);
 		return "sampleForm";
 	}
 
@@ -32,9 +34,21 @@ public class SampleController {
 	public String getLineEvaluation(Model model, String subjectCode) {
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
-		
 		return "lineEvaluationPopup";
 	}
+	
+	
+	@RequestMapping("/addLineEvaluation.baron")
+	public String addLineEvaluation(Model model, String comment) {
+		String subjectCode="0001701002";
+		String userId="zakarose";
+		service.addLineEvaluationItem(comment,subjectCode,userId);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationPopup";
+	}
+	
+	
 
 	@RequestMapping("/getSearchResult.baron")
 	public String searchSubjectReslut(Model model, String searchType, String searchKey) {

@@ -34,7 +34,6 @@ public class SampleController {
 	public String getLineEvaluation(Model model, String subjectCode) {
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
-		
 		return "lineEvaluationPopup";
 	}
 

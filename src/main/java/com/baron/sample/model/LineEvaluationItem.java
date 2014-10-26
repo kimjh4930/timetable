@@ -14,9 +14,6 @@ public class LineEvaluationItem {
 		this.indexNo = indexNo;
 	}
 
-	public String getComment() {
-		return comment;
-	}
 
 	public String getUserId() {
 		return userId;
@@ -26,7 +23,7 @@ public class LineEvaluationItem {
 		this.userId = userId;
 	}
 
-	public String getComent() {
+	public String getComment() {
 		return comment;
 	}
 

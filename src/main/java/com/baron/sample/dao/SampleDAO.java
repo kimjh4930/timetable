@@ -14,7 +14,8 @@ public interface SampleDAO {
 	int selectMemberCount(int userId);
 
 	List<LineEvaluationItem> selectLineEvaluationItem(String subjectCode);
+	
+	void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem, String subjectCode);
 
 	List<String> selectDepartment();
-
 }

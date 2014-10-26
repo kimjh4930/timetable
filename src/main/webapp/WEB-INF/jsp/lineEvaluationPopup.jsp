@@ -13,12 +13,15 @@
 			<tr>
 				<td>${item.userId}</td>
 				<td>${item.comment}</td>
+				<td id=delete> x </td>
 				<td>${item.starScore}</td>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>
-<form action="get">
+<form>
 	로그인아이디
-	<input type="text" name="comemt">
+	<input type="text" name="comment" id="input">
+	
+
 </form>	

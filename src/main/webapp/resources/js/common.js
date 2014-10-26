@@ -22,7 +22,7 @@ $(document).ready(function() {
 								alert('ajax failed');
 							},
 							success:function(data, status) {
-								$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageX).css('left',e.pageY);
+								$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageX).css('left',e.pageY);		// 댓글창 뜨기 
 
 							}
 						});
@@ -111,14 +111,14 @@ function searchSubject() {
 		url:"/getSearchResult.baron",				// 호출할 URL
 		data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
 		error:function() {					// Ajax error handler
-			alert('ajax failed');
+			alert('ajax failed search');
 		},
 		success:function(data, status) {	// Ajax complete handelr
-			$('.listArea').empty().append(data);
-			/*$('.listArea').empty().append(data).find('div').each(function(index) {
-				
+			//$('.listArea').empty().append(data);
+			$('.listArea').empty().append(data).find('tr').each(function(index) {
+				setEventSubject($(this));
 
-			})*/
+			})
 		}
 	});
 }

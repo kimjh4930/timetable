@@ -15,4 +15,7 @@ public interface SampleService {
 	void registerSubject(String subjectCode, int memberCode, int timetableNo);
 
 	List<String> getDepartmentList();
+		
+	void addLineEvaluationItem(String comment, String subjectCode, String userId );
+
 }

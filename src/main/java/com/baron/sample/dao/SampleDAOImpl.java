@@ -37,7 +37,13 @@ public class SampleDAOImpl implements SampleDAO {
 	}
 	
 	@Override
+	public void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem, String subjectCode){
+		session.insert(NAMESPACE + "insertLineEvaluationItem", lineEvaluationItem);
+	}
+
+	@Override
 	public List<String> selectDepartment(){
 		return session.selectList(NAMESPACE + "selectDepartment");
 	}
 }
+

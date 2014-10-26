@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
 	<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
+    <script type="text/javascript" src="/resources/js/subject-control.js"></script>
 </head>
 <body>
 	<header id="main_header">
@@ -38,7 +39,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>1교시 9:30</td>
+							<td>1교시9:30</td>
 						</tr>
 						<tr>
 							<td>2교시 10:30</td>
@@ -215,13 +216,18 @@
 		</section>
 		<section id="right_section">
 			<article class="searchArea">
+<<<<<<< HEAD
 				캠퍼스구분 
 				<select class="CampusSort" id="CampusSort">
+=======
+				캠퍼스구분  
+				<select class="CampusSort">
+>>>>>>> refs/remotes/origin/develop
 					<option value="songdo">송도</option>
 					<option value="jemulpo">제물포</option>
 				</select>
 				
-				학기선택 
+				학기선택
 				<select class="semesterSelect">
 					<option value="semeste">2014년2학기</option>
 				</select><br>
@@ -253,7 +259,7 @@
 					<option value="friday">금</option>
 				</select><br>
 				<form>
-					학년 
+					학년
 					<input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked">
 					   <label for="ch1"	class="css-label">1</label>
 					   <input type="checkbox" id="ch2"	class="css-checkbox" name="year" value="2" checked="checked">

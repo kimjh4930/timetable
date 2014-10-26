@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".bookbark_button").click(function() {
+	$(".bookmark_button").click(function() {
 		$.ajax({
 			type:"GET",							// GET or POST
 			url:"/getList.baron",			// URL
@@ -43,13 +43,38 @@ $(document).ready(function() {
 			searchSubject();
 		}
 	});
-	//과목선택한거에 따라서 이수구분 추가
 	
+	//compus 선택
+	/*$(".CampusSort").click(function(event) {
+		$.ajax({
+			type:"GET",
+			url:"/getSearchResult.baron",
+			data:"searchType=" + $('#CampusSort').val(),
+			error:function() {
+				alert('ajax failed');
+			},
+			success:function(data, status){
+				
+			}
+		});
+	});*/
 	
+	/*$.ajax({
+	type:"GET",							// GET or POST
+	url:"/getSearchResult.baron",				// 호출할 URL
+	data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
+	error:function() {					// Ajax error handler
+		alert('ajax failed');
+	},
+	success:function(data, status) {	// Ajax complete handelr
+		$('.listArea').empty().append(data);
+	}
+});	*/
 	
-	/*if($("#departmentList option:selected").val() == "liberalArts"){
-		$("#liberalArts").append("<option value=essential>교양필수")
-	}*/
+	$("#departmentList").click(function(event){
+		
+	});
+	
 	/*
 	 * 교양 - 교양필수, 교양선택
 	 * 교직 - 교직
@@ -57,7 +82,7 @@ $(document).ready(function() {
 	 * 전공 - 전공기초, 전공필수, 전공선택, 기초과학
 	 * 군사학 - 군사학
 	 */
-	$("#departmentList").click(function(){
+	$("#departmentList").change(function(){
 		$("#completionDivision").empty();
 		$("#completionDivision").append("<option value=select id=select>선택</option>");
 		if($("#departmentList option:selected").val() == "liberalArts"){
@@ -93,6 +118,7 @@ $(document).ready(function() {
 		}else{
 			//그외에는 반응 안함
 		}
+		searchSubject();
 	});
 	
 	//초기화버튼
@@ -109,7 +135,7 @@ function searchSubject() {
 	$.ajax({
 		type:"GET",							// GET or POST
 		url:"/getSearchResult.baron",				// 호출할 URL
-		data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val(),
+		data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val() +"&department=" +$('#departmentList option:selected').text(),
 		error:function() {					// Ajax error handler
 			alert('ajax failed');
 		},

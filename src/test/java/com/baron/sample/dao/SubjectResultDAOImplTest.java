@@ -46,9 +46,27 @@ public class SubjectResultDAOImplTest {
 	public void testSelectSubject_교수명으로_조회했을때() throws Exception {
 		//Given
 		String searchKey = "이문학";
-		String searchType = "professor";
+		String searchType = null;
 		
 		SubjectCommandModel command = new SubjectCommandModel();
+		command.setSearchKey(searchKey);
+		command.setSearchType(searchType);
+
+		//When
+		List<SubjectResultModel> actual = dao.searchSubject(command);
+
+		//Then
+		assertNotNull(actual);
+	}
+	@Test
+	public void testSelectSubject_학과_조회했을때() throws Exception {
+		//Given
+		String department ="컴퓨터공학부";
+		String searchKey = "";
+		String searchType = "subject";
+		
+		SubjectCommandModel command = new SubjectCommandModel();
+		command.setDepartment(department);
 		command.setSearchKey(searchKey);
 		command.setSearchType(searchType);
 

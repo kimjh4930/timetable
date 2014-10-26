@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baron.sample.model.LineEvaluationModel;
+import com.baron.sample.model.SubjectCommandModel;
 import com.baron.sample.model.SubjectResultModel;
 import com.baron.sample.service.SampleService;
 
@@ -39,8 +40,8 @@ public class SampleController {
 	}
 
 	@RequestMapping("/getSearchResult.baron")
-	public String searchSubjectReslut(Model model, String searchType, String searchKey) {
-		List<SubjectResultModel> subjectResultList = service.getSubjectResultList(searchType, searchKey);//new ArrayList<SubjectResultModel>();
+	public String searchSubjectReslut(Model model, SubjectCommandModel command) {
+		List<SubjectResultModel> subjectResultList = service.getSubjectResultList(command);//new ArrayList<SubjectResultModel>();
 		model.addAttribute("subjectResultList", subjectResultList); //(key, value)
 		//getList의 자료를 받아옴
 		return "getList";

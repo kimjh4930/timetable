@@ -22,6 +22,5 @@
 <form>
 	로그인아이디
 	<input type="text" name="comment" id="input">
-	
 
 </form>	

@@ -39,8 +39,13 @@ public class SampleController {
 	
 	
 	@RequestMapping("/addLineEvaluation.baron")
-	public String addLineEvaluation(Model model, String comment) {
-		String subjectCode="0001701002";
+	public String addLineEvaluation(Model model, String comment,String subjectCode) {
+		System.out.println();
+		System.out.println("과목코두: " + subjectCode);
+		System.out.println();
+		System.out.println();
+		System.out.println("코멘트: " + comment);
+		System.out.println();
 		String userId="zakarose";
 		service.addLineEvaluationItem(comment,subjectCode,userId);
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);

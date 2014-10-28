@@ -15,7 +15,7 @@ public interface SampleDAO {
 
 	List<LineEvaluationItem> selectLineEvaluationItem(String subjectCode);
 	
-	void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem, String subjectCode);
+	void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem);
 
 	List<String> selectDepartment();
 }

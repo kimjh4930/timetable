@@ -4,7 +4,7 @@ function setEventSubject(subject) {
 	$(subject).click(function(e) {    
 		setTimeout(function(){
 			if(dbclick ==false){
-				var subjectCode = $(this).attr('subjectCode');
+				var subjectCode = $(subject).attr('subjectCode');
 
 				$.ajax({
 					type:"GET",
@@ -16,7 +16,7 @@ function setEventSubject(subject) {
 					},
 					success:function(data, status) {
 						var current=$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageY).css('left',e.pageX).find('form');
-						addCommentcc(current); // 댓글 입력 이벤트
+						addComment(current,subjectCode); // 댓글 입력 이벤트
 					}
 				})
 
@@ -45,15 +45,15 @@ function setEventSubject(subject) {
 }
 
 //댓글 입력 이벤트
-function addComment(commentData) {
+function addComment(commentData,subjectCode) {
    $(commentData).submit(function(){ //엔터 했을 경우
-      
-      var comment=$(input).val();
 
+      var comment=$(input).val();
+      
       $.ajax({
          type:"GET",
          url:"/addLineEvaluation.baron",
-         data:"comment=" + comment,
+         data:"comment=" + comment+"&subjectCode="+subjectCode,
          datatype:"xml",
          error:function() {
             alert('ajax failed');
@@ -62,7 +62,7 @@ function addComment(commentData) {
             function(data, status) {
             var current=$('#lineEvaluationArea').empty().append(data).show().find('form');
                
-            addComment(current); 
+            addComment(current,subjectCode); 
             
          }
       });

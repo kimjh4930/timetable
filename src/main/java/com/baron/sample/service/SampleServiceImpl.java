@@ -60,18 +60,14 @@ public class SampleServiceImpl implements SampleService {
 	
 	@Override
 	public void addLineEvaluationItem(String comment, String subjectCode, String userId){
-//		LineEvaluationModel lineEvaluation= new LineEvaluationModel();
-//		 //lineEvaluation.setAvgStarScore(avgStarScore);
-//		 //lineEvaluation.setProfessorName(professorName);
-//		 lineEvaluation.setSubjectCode(subjectCode);
-//		 //lineEvaluation.setSubjectName(subjectName);
-//		 lineEvaluation.setItemList(itemList);	
+
 		LineEvaluationItem lineEvaluationItem = new LineEvaluationItem();
 		lineEvaluationItem.setComment(comment);
 		lineEvaluationItem.setStarScore(8.0f);
 		lineEvaluationItem.setUserId(userId);
 		lineEvaluationItem.setIndexNo(4);
-		sampleDAO.insertLineEvaluationItem(lineEvaluationItem,subjectCode); 
+		lineEvaluationItem.setSubjectCode(subjectCode);
+		sampleDAO.insertLineEvaluationItem(lineEvaluationItem); 
 	}
 
 

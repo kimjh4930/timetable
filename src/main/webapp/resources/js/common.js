@@ -114,7 +114,6 @@ function searchSubject() {
 			alert('ajax failed search');
 		},
 		success:function(data, status) {	// Ajax complete handelr
-			//$('.listArea').empty().append(data);
 			$('.listArea').empty().append(data).find('tr').each(function(index) {
 				setEventSubject($(this));
 

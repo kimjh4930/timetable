@@ -69,6 +69,11 @@ public class SampleServiceImpl implements SampleService {
 		lineEvaluationItem.setSubjectCode(subjectCode);
 		sampleDAO.insertLineEvaluationItem(lineEvaluationItem); 
 	}
+	
+	@Override
+	public void deleteLineEvaluationItem(int indexNo){
+		sampleDAO.deleteLineEvaluationItem(indexNo);
+	}
 
 
 	

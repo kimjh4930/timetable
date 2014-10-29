@@ -81,6 +81,7 @@
         AND professor LIKE '%' || #{searchKey} || '%'
       </if>
     </select>
+    
     <select id="selectDepartment" resultType="String">
         SELECT
             major As subjectDept
@@ -88,6 +89,7 @@
             tt_subject
         GROUP BY major
     </select>
+    
     <select id="searchSubjectByDepartment" resultType="subjectResultModel" parameterType="subjectCommandModel">
         SELECT
             code AS subjectCode,
@@ -109,9 +111,12 @@
 		<selectKey resultType="Integer" keyProperty="indexNo" order="BEFORE">
 			SELECT MAX(le_no)+1 FROM tt_line_evaulation
 		</selectKey>
-		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,
-		comment, star_score, insertdate)
+		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,comment, star_score, insertdate)
 		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, 8.0, '2012-02-12 11:22:10' );
-
 	</insert>
+	
+	<delete id="deleteLineEvaluationItem" parameterType="Integer">
+		delete from tt_line_evaulation where le_no=#{indexNo}
+	</delete>
+	
 </mapper>

@@ -2,7 +2,6 @@ html {
 	width: 1430px;
 }
 
-
 body {
 	margin: 0;
 	padding: 0;
@@ -237,8 +236,28 @@ table {
 	padding-bottom: 3px;
 }
 
-.subjectResultArea thead tr {height:25px;background-color:#565757;font-size:11px;font-weight: bold;color: white;word-spacing:10px;padding-top:5px;padding-bottom:3px;text-align: center;}
-.subjectResultArea tbody tr {height:25px;font-size:12px;font-weight: bold;word-spacing:10px;padding-top:5px;padding-bottom:3px;text-align: center;border-bottom: 1px solid white;}
+.subjectResultArea thead tr {
+	height: 25px;
+	background-color: #565757;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+	word-spacing: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+
+.subjectResultArea tbody tr {
+	height: 25px;
+	font-size: 12px;
+	font-weight: bold;
+	word-spacing: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	text-align: center;
+	border-bottom: 1px solid white;
+}
 
 #content>#right_section>.subjectResultArea>.listArea {
 	width: 490px;
@@ -260,26 +279,60 @@ table {
 
 #lineEvaluationArea {
 	width: 300px;
-	height: 400px;
-	background: #D1D1D1;
+	height: 370px;
+	background: #FAF6FB;
 	display: none;
 	position: absolute;
 	z-index: 999;
-	border: 1px solid #C1C2C2;
+	border: 1px solid #EAE9EA;
 }
 
 .lineEvaluationLeftArea {
 	float: left;
+	margin: 8px;
+	margin-left: 10px;
+	font-size: 12px;
+	font-weight: bold;
 }
 
 .lineEvaluationRightArea {
 	float: right;
+	margin: 8px;
+	margin-right: 15px;
+	font-size: 11px;
+	font-weight: bold;
 }
 
 #lineEvaluationTable {
 	width: 290px;
 	height: 260px;
-	background: #FFFFFF;
+	background: #FDFBFD;
+	border: 1px solid #EAE9EA;
 	position: relative;
 	margin: 5px;
+	font-size: 12px;
+}
+
+/*
+#lineEvaluationTable tbody tr td {
+	max-height: 10px;
+	color: blue;
+}
+
+#lineEvaluationTable tbody  #other_evaluation td {
+	color: red;
+}
+*/
+
+#evaluationForm {
+	margin: 5px;
+	font-size: 11px;
+}
+
+#evaluationForm input {
+	width: 200px;
+	height: 13px;
+	margin-right: 5px;
+	font-size: 11px;
+	float: right;
 }

@@ -40,6 +40,11 @@ public class SampleDAOImpl implements SampleDAO {
 	public void insertLineEvaluationItem(LineEvaluationItem lineEvaluationItem){
 		session.insert(NAMESPACE + "insertLineEvaluationItem", lineEvaluationItem);
 	}
+	
+	@Override
+	public void deleteLineEvaluationItem(int indexNo){
+		session.delete(NAMESPACE + "deleteLineEvaluationItem", indexNo);
+	}
 
 	@Override
 	public List<String> selectDepartment(){

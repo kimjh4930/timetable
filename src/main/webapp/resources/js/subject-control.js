@@ -18,9 +18,11 @@ function setEventSubject(subject) {
 						var current=$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageY).css('left',e.pageX);
 						deleteComment(current,subjectCode);
 						addComment(current,subjectCode); // 댓글 입력 이벤트
-						current.find($('#close')).click(function(){//댓글창 닫기 이벤트
-							current.empty().css('display','none');
-						});
+						closeEvaluation(current);
+						
+						 $('input:hidden[name=main_star]').rating('select',8).rating('readOnly',true); //고정별점
+						 $('input:hidden[name=saved_star]').rating('select',5).rating('readOnly',true); //고정별점
+						
 
 					}
 				})
@@ -69,7 +71,7 @@ function addComment(commentData,subjectCode) {
 
 				addComment(current,subjectCode); 
 				deleteComment(current,subjectCode);
-
+				closeEvaluation(current);
 			}
 		});
 		return false;
@@ -95,10 +97,17 @@ function deleteComment(commentData,subjectCode){
 					var current=$('#lineEvaluationArea').empty().append(data).show();
 					addComment(current,subjectCode); 
 					deleteComment(current,subjectCode);
-
+					closeEvaluation(current);
 				}
 			});
 
 		});
+	});
+}
+
+//댓글창 닫기 이벤트
+function closeEvaluation(commentData){
+	$(commentData).find($('#close')).click(function(){//댓글창 닫기 이벤트
+		$(commentData).empty().css('display','none');
 	});
 }

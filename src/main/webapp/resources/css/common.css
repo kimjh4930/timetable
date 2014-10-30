@@ -278,8 +278,8 @@ table {
 }
 
 #lineEvaluationArea {
-	width: 300px;
-	height: 370px;
+	width: 350px;
+	height: 450px;
 	background: #FAF6FB;
 	display: none;
 	position: absolute;
@@ -288,11 +288,17 @@ table {
 }
 
 .lineEvaluationLeftArea {
+	width:130px;
 	float: left;
 	margin: 8px;
 	margin-left: 10px;
 	font-size: 12px;
 	font-weight: bold;
+}
+
+
+.lineEvaluationLeftArea > #main_star_area > span> div {
+	width:17px;
 }
 
 .lineEvaluationRightArea {
@@ -304,8 +310,8 @@ table {
 }
 
 #lineEvaluationTable {
-	width: 290px;
-	height: 260px;
+	width: 340px;
+	height: 350px;
 	background: #FDFBFD;
 	border: 1px solid #EAE9EA;
 	position: relative;

@@ -30,7 +30,7 @@
     		title,
     		professor,
     		(
-    			SELECT AVG(star_score)
+    			SELECT ROUND(AVG(star_score),2)
     			FROM tt_line_evaulation
     			WHERE subject_code = #{subjectCode}
     		) as avgStarScore

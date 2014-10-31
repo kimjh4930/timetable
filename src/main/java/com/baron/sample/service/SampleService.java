@@ -15,7 +15,7 @@ public interface SampleService {
 
 	List<String> getDepartmentList();
 		
-	void addLineEvaluationItem(String comment, String subjectCode, String userId );
+	void addLineEvaluationItem(String comment, String subjectCode, String userId, float starScore );
 	
 	void deleteLineEvaluationItem(int indexNo);
 

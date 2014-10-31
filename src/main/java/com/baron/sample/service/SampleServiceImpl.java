@@ -59,11 +59,11 @@ public class SampleServiceImpl implements SampleService {
 	}
 	
 	@Override
-	public void addLineEvaluationItem(String comment, String subjectCode, String userId){
+	public void addLineEvaluationItem(String comment, String subjectCode, String userId, float starScore){
 
 		LineEvaluationItem lineEvaluationItem = new LineEvaluationItem();
 		lineEvaluationItem.setComment(comment);
-		lineEvaluationItem.setStarScore(8.0f);
+		lineEvaluationItem.setStarScore(starScore);
 		lineEvaluationItem.setUserId(userId);
 		lineEvaluationItem.setIndexNo(4);
 		lineEvaluationItem.setSubjectCode(subjectCode);

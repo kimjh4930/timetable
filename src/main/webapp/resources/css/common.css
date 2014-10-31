@@ -118,7 +118,7 @@ table {
 	{
 	height: 24px;
 	border: 1px solid #6E6F6F;
-	background-color: #EBEBEB;
+	background-color: #F6F6F6;
 }
 
 #content>#left_section>.timeTableArea>.LeftTableFrame>.timeBoardTable td>.daytimeMark
@@ -279,7 +279,7 @@ table {
 
 #lineEvaluationArea {
 	width: 350px;
-	height: 450px;
+	height: auto;
 	background: #FAF6FB;
 	display: none;
 	position: absolute;
@@ -288,7 +288,7 @@ table {
 }
 
 .lineEvaluationLeftArea {
-	width:130px;
+	width: 130px;
 	float: left;
 	margin: 8px;
 	margin-left: 10px;
@@ -296,9 +296,8 @@ table {
 	font-weight: bold;
 }
 
-
-.lineEvaluationLeftArea > #main_star_area > span> div {
-	width:17px;
+.lineEvaluationLeftArea>#main_star_area>span>div {
+	width: 17px;
 }
 
 .lineEvaluationRightArea {
@@ -311,12 +310,16 @@ table {
 
 #lineEvaluationTable {
 	width: 340px;
-	height: 350px;
-	background: #FDFBFD;
-	border: 1px solid #EAE9EA;
+	height: 150px;
+	background: #FFFEFF;
 	position: relative;
 	margin: 5px;
 	font-size: 12px;
+}
+
+#lineEvaluationTable thead {
+	border-bottom: 5px solid #FAF6FB;
+	padding: 5px;
 }
 
 /*
@@ -329,7 +332,6 @@ table {
 	color: red;
 }
 */
-
 #evaluationForm {
 	margin: 5px;
 	font-size: 11px;

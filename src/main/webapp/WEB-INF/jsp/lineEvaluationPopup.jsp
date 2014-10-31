@@ -10,7 +10,7 @@
 <div class="lineEvaluationLeftArea">
 	${lineEvaluation.subjectName}
 	<br> 
-	<div id="main_star_area">
+	<div id="main_star_area" mainStarScore="${lineEvaluation.avgStarScore}" >
 		<input name="main_star" type="radio" class="star {split:2}" /> 
 		<input name="main_star" type="radio" class="star {split:2}" /> 
 		<input name="main_star" type="radio" class="star {split:2}" /> 
@@ -18,7 +18,7 @@
 		<input name="main_star" type="radio" class="star {split:2}" />
 		<input name="main_star" type="radio" class="star {split:2}" /> 
 		<input name="main_star" type="radio" class="star {split:2}" /> 
-		<input name="main_star" type="radio" class="star {split:2}" checked="checked" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
 		<input name="main_star" type="radio" class="star {split:2}" /> 
 		<input name="main_star" type="radio" class="star {split:2}" />
 	 	${lineEvaluation.avgStarScore}
@@ -36,12 +36,11 @@
 
 
 <table id="lineEvaluationTable">
-	<thead>
-	</thead>
 	<tbody>
 		<c:forEach items="${lineEvaluation.itemList}" var="item" >
+		<thead>	
 			<tr>
-				<td rowspan="2" style="width:100px; height:45px;" >  ${item.starScore}
+				<td rowspan="2" style="width:100px; height:50px;" >  ${item.starScore}
 				<!--<input name="saved_star" type="radio" class="star {split:2}" /> 
 					<input name="saved_star" type="radio" class="star {split:2}" /> 
 					<input name="saved_star" type="radio" class="star {split:2}" /> 
@@ -53,36 +52,37 @@
 					<input name="saved_star" type="radio" class="star {split:2}" /> 
 					<input name="saved_star" type="radio" class="star {split:2}" />	  -->				
 				</td>
-				<td style="width:200px ;height:30px " >${item.comment}</td>
+				<td style="width:200px; height:30px; margin-bottom:0px;" " >${item.comment}</td>
 				<td id=delete index="${item.indexNo}">x</td>
 				
-		</tr>
-			<tr  style="width:200px ;height:15px; font-size:11px; font-weight:normal; color:gray;">
-			<td >${item.userId} | 14.05.24 오후 9:00</td>
-		</tr>
-			
+			</tr>
+			<tr>
+				<td style="width:150px; height:20px; font-size:11px; font-weight:normal; color:gray; margin-bottom:5px;" >
+				${item.userId} | 14.05.24 오후 9:00</td>
+				<td></td>
+			</tr>
+		</thead>	
 		</c:forEach>
 		<tr id="other_evaluation">
-			<td >다른 댓글 더 보기</td>
+			<td  style="height:30px;">다른 댓글 더 보기</td>
 		</tr>
-
+		
 	</tbody>
 
-
-
 </table>
-<form id="evaluationForm">
-	
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" />
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" /> 
-	<input name="personal_star" type="radio" class="star {split:2}" checked="checked" />
+
+
+<form id="evaluationForm"  style=" height:30px;  margin-top:15px; margin-left: 20px">
+	<input name="personal_star" type="radio"  value="1" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="2" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="3" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="4" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="5" class="star {split:2}" />
+	<input name="personal_star" type="radio"  value="6" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="7" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="8" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="9" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="10" class="star {split:2}" checked="checked"/>
 
 	<input type="text" name="comment" id="input"
 		placeholder="댓글을 입력하세요">

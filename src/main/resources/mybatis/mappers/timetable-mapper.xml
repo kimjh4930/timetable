@@ -112,7 +112,7 @@
 			SELECT MAX(le_no)+1 FROM tt_line_evaulation
 		</selectKey>
 		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,comment, star_score, insertdate)
-		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, 8.0, '2012-02-12 11:22:10' );
+		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, #{starScore}, '2012-02-12 11:22:10' );
 	</insert>
 	
 	<delete id="deleteLineEvaluationItem" parameterType="Integer">

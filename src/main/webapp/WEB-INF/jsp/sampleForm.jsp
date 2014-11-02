@@ -217,13 +217,8 @@
 		</section>
 		<section id="right_section">
 			<article class="searchArea">
-<<<<<<< HEAD
 				캠퍼스구분 
 				<select class="CampusSort" id="CampusSort">
-=======
-				캠퍼스구분  
-				<select class="CampusSort">
->>>>>>> refs/remotes/origin/develop
 					<option value="songdo">송도</option>
 					<option value="jemulpo">제물포</option>
 				</select>
@@ -279,7 +274,7 @@
 				</form>
 				<div class="line"></div>
 				<br>
-				<button type="button" class="bookmark_button" name="bookmark" style="float: right;"></button>
+				<button type="button" class="bookbark_button" name="bookmark" style="float: right;"></button>
 			</article>
 			<article class="subjectResultArea">
 				<table>

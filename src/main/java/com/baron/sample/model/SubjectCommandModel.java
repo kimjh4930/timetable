@@ -21,7 +21,7 @@ public class SubjectCommandModel {
 		this.searchKey = searchKey;
 	}
 	// 여기다가 학과정보조회 추가
-
+	
 	public String getDepartment() {
 		return department;
 	}

@@ -31,11 +31,7 @@ public class SampleServiceImpl implements SampleService {
 	}
 
 	@Override
-	public List<SubjectResultModel> getSubjectResultList(String searchType, String searchKey) {
-		
-		SubjectCommandModel command = new SubjectCommandModel();
-		command.setSearchKey(searchKey);
-		command.setSearchType(searchType);
+	public List<SubjectResultModel> getSubjectResultList(SubjectCommandModel command) {
 		
 		return subjectResultDAO.searchSubject(command);
 	}

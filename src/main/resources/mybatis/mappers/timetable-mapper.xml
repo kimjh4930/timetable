@@ -74,12 +74,21 @@
             tt_subject
         WHERE
             1 = 1
-      <if test="searchType == 'subject'">
-        AND title LIKE '%' || #{searchKey} || '%'
-      </if>
-      <if test="searchType == 'professor'">
-        AND professor LIKE '%' || #{searchKey} || '%'
-      </if>
+    <if test="searchKey != null and searchKey !=''">
+        <if test="searchType == 'subject'">
+            AND title LIKE '%' || #{searchKey} || '%'
+        </if>
+        <if test="searchType == 'professor'">
+            AND professor LIKE '%' || #{searchKey} || '%'
+        </if>
+    </if>
+    <if test="department != null and department != '전체'">
+            AND major = #{department}            
+        <if test="section != null">
+            AND section = #{section}
+        </if>
+    </if>
+    
     </select>
     <select id="selectDepartment" resultType="String">
         SELECT
@@ -88,22 +97,4 @@
             tt_subject
         GROUP BY major
     </select>
-    <select id="searchSubjectByDepartment" resultType="subjectResultModel" parameterType="subjectCommandModel">
-        SELECT
-            code AS subjectCode,
-            title AS subjectName,
-            section AS subjectDivide,
-            major AS subjectDept,
-            classyear AS grade,
-            credit AS credit,
-            professor AS professorName,
-            classhour AS classTime,
-            classroom AS classroom
-        FROM 
-            tt_subject
-        WHERE
-            1 = 1
-    </select>
-    
-    
 </mapper>

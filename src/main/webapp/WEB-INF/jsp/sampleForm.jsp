@@ -235,7 +235,7 @@
 			        <option value="generalCourse" id="generalCourse" name="generalCourse">일반선택</option>
 			        <option value="militaryCourse" id="militaryCourse" name="militaryCourse">군사학</option>
 				    <c:forEach items="${departmentList}" var="department">
-				        <option value="department" name="department" id="department"> ${department} </option>
+				        <option value="department" name="department" id="department">${department}</option>
 				    </c:forEach>
 			    </select>
 				

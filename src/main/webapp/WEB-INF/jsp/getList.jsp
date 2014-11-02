@@ -5,8 +5,8 @@
 <c:forEach items="${subjectResultList}" var="subjectResult">
     <tr>
         <td>${subjectResult.subjectName}</td>
-        <td>${subjectResult.grade}</td>
-        <td>${subjectResult.credit}</td>
+        <td>${subjectResult.subjectDivide}</td>
+        <td>${subjectResult.grade}/${subjectResult.credit}</td>
         <td>${subjectResult.professorName}</td>
         <td>${subjectResult.classTime}</td>
         <td>${subjectResult.classroom}</td>

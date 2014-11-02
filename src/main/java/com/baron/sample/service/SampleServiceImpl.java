@@ -1,5 +1,6 @@
 package com.baron.sample.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,12 +62,15 @@ public class SampleServiceImpl implements SampleService {
 	@Override
 	public void addLineEvaluationItem(String comment, String subjectCode, String userId, float starScore){
 
+		
+		
 		LineEvaluationItem lineEvaluationItem = new LineEvaluationItem();
 		lineEvaluationItem.setComment(comment);
 		lineEvaluationItem.setStarScore(starScore);
 		lineEvaluationItem.setUserId(userId);
 		lineEvaluationItem.setIndexNo(4);
 		lineEvaluationItem.setSubjectCode(subjectCode);
+		lineEvaluationItem.setDate(new Date());
 		sampleDAO.insertLineEvaluationItem(lineEvaluationItem); 
 	}
 	

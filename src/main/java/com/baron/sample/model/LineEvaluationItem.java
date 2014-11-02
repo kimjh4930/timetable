@@ -1,12 +1,14 @@
 package com.baron.sample.model;
 
+import java.util.Date;
+
 public class LineEvaluationItem {
 	private String subjectCode;
 	private int indexNo;
 	private String userId;
 	private String comment;
 	private float starScore;
-
+	private Date date;
 
 	public String getSubjectCode() {
 		return subjectCode;
@@ -46,6 +48,14 @@ public class LineEvaluationItem {
 
 	public void setStarScore(float starScore) {
 		this.starScore = starScore;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }

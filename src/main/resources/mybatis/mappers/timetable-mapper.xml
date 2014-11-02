@@ -15,6 +15,7 @@
 		<result column="user_id" property="userId"/>
 		<result column="comment" property="comment"/>
 		<result column="star_score" property="starScore"/>
+		<result column="insertdate" property="date"/>
 	</resultMap>
 
     <select id="selectPersonalData" resultType="personalModel" parameterType="personalCommandModel">
@@ -45,7 +46,8 @@
     		le.le_no,
     		m.user_id,
     		le.comment,
-    		le.star_score
+    		le.star_score,
+    		le.insertdate
     	FROM 
     		tt_line_evaulation le, xe_member m
     	WHERE
@@ -112,7 +114,7 @@
 			SELECT MAX(le_no)+1 FROM tt_line_evaulation
 		</selectKey>
 		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,comment, star_score, insertdate)
-		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, #{starScore}, '2012-02-12 11:22:10' );
+		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, #{starScore}, #{date} );
 	</insert>
 	
 	<delete id="deleteLineEvaluationItem" parameterType="Integer">

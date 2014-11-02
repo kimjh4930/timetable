@@ -16,9 +16,10 @@ function setEventSubject(subject) {
 					},
 					success:function(data, status) {//해당 과목 댓글창 출력
 						var current=$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageY).css('left',e.pageX);
-																
-						 reset(current,subjectCode);
-							 
+
+						setPersonalStarScore(current);
+						reset(current,subjectCode);
+
 					}
 				})
 
@@ -52,7 +53,17 @@ function setEventSubject(subject) {
 //해당과목 메인별점 셋팅
 function setMainStarScore(current){
 	var mainStarScore = $(current).find('#main_star_area').attr('mainStarScore');
-	 $('input:hidden[name=main_star]').rating('select',parseInt(mainStarScore)-1).rating('readOnly',true); //고정별점
+	$('input:hidden[name=main_star]').rating('select',parseInt(mainStarScore)-1).rating('readOnly',true); //고정별점
+
+}
+
+
+//각각 별점 셋팅
+function setPersonalStarScore(current){
+	
+	var personalScore= $(current).find('#personalScore').attr('personalScore');
+	alert(personalScore);
+	$('input:hidden[name=saved_star0]').rating('select',parseInt(personalScore)-1).rating('readOnly',true); //고정별점
 }
 
 
@@ -123,7 +134,7 @@ function closeEvaluation(commentData){
 }
 
 
-// 이벤트 리셋
+//이벤트 리셋
 function reset(current,subjectCode){
 	setMainStarScore(current);
 	isEmptyComment(current);

@@ -17,7 +17,6 @@ function setEventSubject(subject) {
 					success:function(data, status) {//해당 과목 댓글창 출력
 						var current=$('#lineEvaluationArea').empty().append(data).show().css('top',e.pageY).css('left',e.pageX);
 
-						setPersonalStarScore(current);
 						reset(current,subjectCode);
 
 					}
@@ -60,18 +59,48 @@ function setMainStarScore(current){
 
 //각각 별점 셋팅
 function setPersonalStarScore(current){
-	
-	var personalScore= $(current).find('#personalScore').attr('personalScore');
-	alert(personalScore);
-	$('input:hidden[name=saved_star0]').rating('select',parseInt(personalScore)-1).rating('readOnly',true); //고정별점
+
+	$(current).find('.personalScore').each(function(index){
+		var personalScore= $(this).attr('personalScore');
+		$(this).find($('input.star.person')).rating('select',parseInt(personalScore)-1).rating('readOnly',true); 
+	})
+	//고정별점
 }
 
 
-//해당과목에 한줄평가가 하나도 없을 경우
-function isEmptyComment(current){
+//더보기 이벤트
+function LineEvaluationAreaDetail(current){
 	if(	$(current).find('td#delete').attr('index')==null){
 		$(current).find('tr#other_evaluation').html("입력 된 한줄평가가 없습니다.").css('line-height','150px').css('text-align','center');
 	}
+	else{
+		$(current).find('tr#other_evaluation').click(function(){
+			$.ajax({
+				type:"GET",
+				url:"/LineEvaluationAreaDetail.baron",
+				//data:"subjectCode=" + subjectCode + "&timetableNo=" + 1,
+				datatype:"xml",
+				error:function() {
+					alert('ajax failed');
+				},
+				success:function(data, status) {
+					var current=$('#left_section').append(data).find($('.LineEvaluationAreaDetail')).show();
+					closeEvaluationDetail(current);
+					LineEvaluationAreaDetail(current);
+					
+				}
+			});
+		})
+	}
+}
+
+
+
+//더보기댓글창 닫기 이벤트
+function closeEvaluationDetail(commentData){
+	$(commentData).find($('#closeLineEvaluationAreaDetail')).click(function(){
+		$(commentData).remove().css('display','none');
+	});
 }
 
 
@@ -134,10 +163,12 @@ function closeEvaluation(commentData){
 }
 
 
+
 //이벤트 리셋
 function reset(current,subjectCode){
 	setMainStarScore(current);
-	isEmptyComment(current);
+	setPersonalStarScore(current);
+	LineEvaluationAreaDetail(current);
 	addComment(current,subjectCode); 
 	deleteComment(current,subjectCode);
 	closeEvaluation(current);

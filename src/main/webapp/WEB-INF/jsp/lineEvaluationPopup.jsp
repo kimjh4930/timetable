@@ -38,20 +38,20 @@
 
 <table id="lineEvaluationTable">
 	<tbody>
-		<c:forEach items="${lineEvaluation.itemList}" var="item" varStatus="status" >
+		<c:forEach items="${lineEvaluation.itemList}" var="item" varStatus="status" begin="0" end="5" >
 		<thead>	
 			<tr>
-				<td rowspan="2" style="width:100px; height:50px;" id="personalScore" personalScore=${item.starScore} > <%--  ${item.starScore} --%>
+				<td rowspan="2" style="width:100px; height:50px;" class="personalScore" personalScore="${item.starScore}" > 
 					<c:forEach begin="1" end="10">
-						<input name="saved_star${status.index}" type="radio" class="star {split:2} " /> 
+						<input name="saved_star${status.index}" type="radio" class="star {split:2} person " /> 
 					</c:forEach>
 				</td>
-				<td style="width:200px; height:30px; margin-bottom:0px;" >${item.comment}</td>
+				<td style="width:200px; height:30px; margin-bottom:0px;" >${item.comment}</td> 	 	
 				<td id=delete index="${item.indexNo}">x</td>
 			</tr>
 			<tr>
 				<td style="width:150px; height:20px; font-size:11px; font-weight:normal; color:gray; margin-bottom:5px;" >
-				${item.userId} | <fmt:formatDate value="${item.date}" pattern="yyyy. MM. dd hh:mm"/> </td>
+				${item.userId} | <fmt:formatDate value="${item.date}" pattern="yyyy.MM.dd a hh:mm"/> </td>
 				<td></td>
 			</tr>
 		</thead>	

@@ -47,13 +47,15 @@
     		m.user_id,
     		le.comment,
     		le.star_score,
-    		le.insertdate
+    		le.insertdate 
     	FROM 
     		tt_line_evaulation le, xe_member m
     	WHERE
-    		le.member_srl = m.member_srl
+    		le.member_srl = m.member_srl 
     	AND
-    		le.subject_code = #{subjectCode}
+    		le.subject_code = #{subjectCode} 
+    	ORDER BY
+    	    le.insertdate DESC
     </select>
     
     <select id="selectMember" resultType="int" parameterType="int">

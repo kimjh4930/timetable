@@ -60,6 +60,11 @@ public class SampleController {
 		return "lineEvaluationPopup";
 	}
 	
+	@RequestMapping("/LineEvaluationAreaDetail.baron")
+	public String LineEvaluationAreaDetail(Model model){
+		return "LineEvaluationAreaDetail";
+	}
+	
 
 	@RequestMapping("/getSearchResult.baron")
 	public String searchSubjectReslut(Model model, String searchType, String searchKey) {

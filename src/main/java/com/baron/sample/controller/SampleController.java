@@ -40,10 +40,31 @@ public class SampleController {
 	
 	
 	@RequestMapping("/addLineEvaluation.baron")
-	public String addLineEvaluation(Model model, String comment) {
-		String subjectCode="0001701002";
+	public String addLineEvaluation(Model model, String comment,String subjectCode , String star_Score ) {
 		String userId="zakarose";
-		service.addLineEvaluationItem(comment,subjectCode,userId);
+		int starScore=Integer.parseInt(star_Score);
+		
+		System.out.println();
+		System.out.println(starScore);
+
+		service.addLineEvaluationItem(comment,subjectCode,userId,starScore);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationPopup";
+	}
+	
+	
+	
+	@RequestMapping("/deleteLineEvaluation.baron")
+	public String deleteLineEvaluation(Model model, int indexNo , String subjectCode) {
+
+		System.out.println();
+		System.out.println(indexNo);
+		System.out.println();
+		System.out.println();
+		System.out.println(subjectCode);
+		System.out.println();
+		service.deleteLineEvaluationItem(indexNo);
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
 		return "lineEvaluationPopup";

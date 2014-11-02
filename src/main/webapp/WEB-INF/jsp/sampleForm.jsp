@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="/resources/js/common.js"></script>
     <script type="text/javascript" src="/resources/js/subject-control.js"></script>
+   
 </head>
 <body>
 	<header id="main_header">

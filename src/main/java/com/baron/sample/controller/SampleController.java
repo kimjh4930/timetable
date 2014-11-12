@@ -60,9 +60,36 @@ public class SampleController {
 		return "lineEvaluationPopup";
 	}
 	
-	@RequestMapping("/LineEvaluationAreaDetail.baron")
-	public String LineEvaluationAreaDetail(Model model){
-		return "LineEvaluationAreaDetail";
+	
+	@RequestMapping("/detailLineEvaluationArea.baron")
+	public String detailLineEvaluationArea(Model model, String subjectCode){
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
+	}
+	
+	
+	
+	@RequestMapping("/addLineEvaluationDetail.baron")
+	public String addLineEvaluationDetail(Model model, String comment , String subjectCode , String star_Score) {
+		String userId="zakarose";
+		int starScore=Integer.parseInt(star_Score);
+		
+		System.out.println();
+		System.out.println(star_Score);
+		service.addLineEvaluationItem(comment,subjectCode,userId,starScore);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
+	}
+	
+	
+	@RequestMapping("/deleteLineEvaluationDetail.baron")
+	public String deleteLineEvaluationDetail(Model model, int indexNo , String subjectCode) {
+		service.deleteLineEvaluationItem(indexNo);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
 	}
 	
 

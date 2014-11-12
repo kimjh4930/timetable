@@ -68,47 +68,12 @@ function setPersonalStarScore(current){
 }
 
 
-//더보기 이벤트
-function LineEvaluationAreaDetail(current){
-	if(	$(current).find('td#delete').attr('index')==null){
-		$(current).find('tr#other_evaluation').html("입력 된 한줄평가가 없습니다.").css('line-height','150px').css('text-align','center');
-	}
-	else{
-		$(current).find('tr#other_evaluation').click(function(){
-			$.ajax({
-				type:"GET",
-				url:"/LineEvaluationAreaDetail.baron",
-				//data:"subjectCode=" + subjectCode + "&timetableNo=" + 1,
-				datatype:"xml",
-				error:function() {
-					alert('ajax failed');
-				},
-				success:function(data, status) {
-					var current=$('#left_section').append(data).find($('.LineEvaluationAreaDetail')).show();
-					closeEvaluationDetail(current);
-					LineEvaluationAreaDetail(current);
-					
-				}
-			});
-		})
-	}
-}
-
-
-
-//더보기댓글창 닫기 이벤트
-function closeEvaluationDetail(commentData){
-	$(commentData).find($('#closeLineEvaluationAreaDetail')).click(function(){
-		$(commentData).remove().css('display','none');
-	});
-}
-
 
 //새 댓글 등록 이벤트
-function addComment(commentData,subjectCode) {
-	$(commentData).find('form').submit(function(){ //엔터 했을 경우	
-		var comment=$(input).val();
-		var star_Score=$(commentData).find('input:hidden[name=personal_star]:checked').val();
+function addComment(current,subjectCode) {
+	$(current).find('form').submit(function(){ //엔터 했을 경우	
+		var comment=$('input:text[name=comment]').val();
+		var star_Score=$(current).find('input:hidden[name=personal_star]:checked').val();
 
 		$.ajax({
 			type:"GET",
@@ -130,8 +95,8 @@ function addComment(commentData,subjectCode) {
 
 
 //댓글 삭제 이벤트
-function deleteComment(commentData,subjectCode){
-	$(commentData).find('td#delete').each(function(index){
+function deleteComment(current,subjectCode){
+	$(current).find('td#delete').each(function(index){
 		$(this).click(function(){
 			var indexNo=$(this).attr('index');		
 
@@ -146,6 +111,7 @@ function deleteComment(commentData,subjectCode){
 				success:
 					function(data, status) {
 					var current=$('#lineEvaluationArea').empty().append(data).show();
+
 					reset(current,subjectCode);
 				}
 			});
@@ -156,10 +122,145 @@ function deleteComment(commentData,subjectCode){
 
 
 //댓글창 닫기 이벤트
-function closeEvaluation(commentData){
-	$(commentData).find($('#close')).click(function(){
-		$(commentData).empty().css('display','none');
+function closeEvaluation(current){
+	$(current).find($('#close')).click(function(){
+		$(current).empty().css('display','none');
 	});
+}
+
+
+
+
+//더보기 이벤트
+function lineEvaluationAreaDetail(current,subjectCode){
+	if(	$(current).find('td#delete').attr('index')==null){
+		$(current).find('tr#other_evaluation').html("입력 된 한줄평가가 없습니다.").css('line-height','150px').css('text-align','center');
+	}
+	else{
+		$(current).find('tr#other_evaluation').click(function(){
+			$.ajax({
+				type:"GET",
+				url:"/detailLineEvaluationArea.baron",
+				data:"subjectCode=" + subjectCode,
+				datatype:"xml",
+				error:function() {
+					alert('ajax failed');
+				},
+				success:function(data, status) {
+					$('#bodyDisabled').show();
+					var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();	
+					resetDetail(current,subjectCode);
+				
+					
+
+				}
+			});
+		})
+	}
+}
+
+
+//더보기창에서 새 댓글 등록 이벤트
+function addCommentDetail(current,subjectCode) {
+	$(current).find('form').submit(function(){ //엔터 했을 경우	
+		var comment=$('input:text[name=commentDetail]').val();
+		var star_Score=$(current).find('input:hidden[name=personal_star]:checked').val();
+
+		$.ajax({
+			type:"GET",
+			url:"/addLineEvaluationDetail.baron",
+			data:"comment=" + comment+"&subjectCode="+subjectCode+"&star_Score="+star_Score ,
+			datatype:"xml",
+			error:function() {
+				alert('ajax failed');
+			},
+			success:
+				function(data, status) {
+				var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();	
+				resetDetail(current,subjectCode);
+				$.ajax({
+					type:"GET",
+					url:"/getLineEvaluation.baron",
+					data:"subjectCode=" + subjectCode,
+					datatype:"xml",
+					error:function() {
+						alert('ajax failed');
+					},
+					success:function(data, status) {//해당 과목 댓글창 출력
+						current2=$('#lineEvaluationArea').empty().append(data).show();
+						reset(current2,subjectCode);
+						
+					}
+				})
+			}
+		});
+		return false;
+	});
+}
+
+
+//더보기창에서 댓글 삭제 이벤트
+function deleteCommentDetail(current,subjectCode){
+	$(current).find('td#deleteDetail').each(function(index){
+		$(this).click(function(){
+			var indexNo=$(this).attr('index');	
+
+			$.ajax({
+				type:"GET",
+				url:"/deleteLineEvaluationDetail.baron",
+				data:"subjectCode="+subjectCode+"&indexNo="+indexNo,
+				datatype:"xml",
+				error:function() {
+					alert('ajax failed');
+				},
+				success:
+					function(data, status) {
+					var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();	
+					$.ajax({
+						type:"GET",
+						url:"/getLineEvaluation.baron",
+						data:"subjectCode=" + subjectCode,
+						datatype:"xml",
+						error:function() {
+							alert('ajax failed');
+						},
+						success:function(data, status) {//해당 과목 댓글창 출력
+							current2=$('#lineEvaluationArea').empty().append(data).show();
+							reset(current2,subjectCode);
+						}
+					})
+
+					resetDetail(current,subjectCode);
+				}
+			});
+
+		});
+	});
+}
+
+
+//더보기댓글창 닫기 이벤트
+function closeEvaluationDetail(current){
+		$('#closeLineEvaluationAreaDetail').click(function(){
+		$(current).css('display','none');
+		$('#lineEvaluationAreaDetail').css('display','none');
+		$('#bodyDisabled').css('display','none');
+	});
+}
+
+
+//더보기댓글창 무한스크롤 이벤트
+function infiniteScroll(current,subjectCode){
+	$(current).scroll(function() {
+		var scrollHeight = $(current).scrollTop()+$(current).height();
+		var documentHeight = $(current).find($('#detailLineEvaluationTable')).height();
+		if (scrollHeight == documentHeight) {
+			alert("로딩");
+				current2=$(current).append($("<h1>무한 스크롤  </h1>"));
+				resetDetail(current2,subjectCode);
+		}
+	});
+
 }
 
 
@@ -168,8 +269,20 @@ function closeEvaluation(commentData){
 function reset(current,subjectCode){
 	setMainStarScore(current);
 	setPersonalStarScore(current);
-	LineEvaluationAreaDetail(current);
 	addComment(current,subjectCode); 
 	deleteComment(current,subjectCode);
 	closeEvaluation(current);
+	lineEvaluationAreaDetail(current,subjectCode);
 }
+
+
+//더보기이벤트 리셋
+function resetDetail(current,subjectCode){
+	setPersonalStarScore(current);
+	addCommentDetail(current,subjectCode);
+	deleteCommentDetail(current,subjectCode);
+	closeEvaluationDetail(current);
+	infiniteScroll(current,subjectCode);
+	
+}
+

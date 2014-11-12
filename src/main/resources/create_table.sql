@@ -78,4 +78,22 @@ INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_s
 VALUES ( 2, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
 VALUES ( 3, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 4, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 5, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 6, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 7, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 8, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 9, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 10, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 11, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
+INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
+VALUES ( 12, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
 

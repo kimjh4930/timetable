@@ -53,6 +53,7 @@ table {
 	width: 490px;
 	height: 540px;
 	overflow: hidden;
+	position: relative;
 }
 
 #content>#right_section {
@@ -87,7 +88,6 @@ table {
 	height: 465px;
 	overflow: hidden;
 	background-color: #565757;
-	position: absolute; 
 }
 
 #content>#left_section>.timeTableArea>.LeftTableFrame {
@@ -336,6 +336,9 @@ table {
 #evaluationForm {
 	margin: 5px;
 	font-size: 11px;
+	height: 30px;
+	margin-top: 15px;
+	margin-left: 20px
 }
 
 #evaluationForm input {
@@ -346,17 +349,75 @@ table {
 	float: right;
 }
 
-.LineEvaluationAreaDetail{
-	width: 400px;
-	height: 500px;
-	background-color: blue;
-	position:absolute;
-	display: none;	
-
+#lineEvaluationAreaDetail {
+	width: 460px;
+	height: 690px;
+	background: #FAF6FB;
+	position: fixed;
+	display: none;
+	top: 10px;
+	left: 225px;
+	z-index: 9999;
 }
 
-#closeLineEvaluationAreaDetail{
+#lineEvaluationAreaDetailScroll {
+	width: 460px;
+	height: 600px;
+	position: fixed;
+	display: none;
+	top: 40px;
+	left: 225px;
+	overflow:auto;
+	overflow-x:hidden;
+}
+
+
+
+#closeLineEvaluationAreaDetail {
+	width: 10px;
+	height: 10px;
+	left: 667px;
+	top: 15px;
+	right: 390px;
+	position:fixed;
+}
+
+#detailLineEvaluationTable {
+	width: 450px;
+	height: 150px;
+	background: #FFFEFF;
+	position: relative;
+	margin-left: 5px;
+	font-size: 12px;
+}
+
+#detailLineEvaluationTable thead {
+	border-bottom: 5px solid #FAF6FB;
+}
+
+#detailEvaluationForm {
+	width: 420px;
+	height: 30px;
+	top: 660px;
+	left: 220px;
+	font-size: 11px;
+	margin-left: 20px;
+	position: fixed;
+}
+
+#detailEvaluationForm input {
+	width: 300px;
 	float: right;
-	margin-top: 5px;
-	margin-right: 10px;
+}
+
+#bodyDisabled {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 800px;
+	background-color: black;
+	opacity: 0.75;
+	display: none;
+	position: fixed;
+	z-index: 9998;
 }

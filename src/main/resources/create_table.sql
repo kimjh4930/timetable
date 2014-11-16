@@ -73,11 +73,11 @@ CREATE TABLE  IF NOT EXISTS tt_line_evaulation(
 );
 
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 1, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
+VALUES ( 1, '0001701002', 3894, '이거좋아용1-첫번째', 1, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 2, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
+VALUES ( 2, '0001701002', 3894, '이거싫어용2', 3, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 3, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
+VALUES ( 3, '0001701002', 3894, '이거그거그래요3', 5, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
 VALUES ( 4, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
@@ -91,9 +91,9 @@ VALUES ( 8, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
 VALUES ( 9, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 10, '0001701002', 3894, '이거좋아용', 1, '2012-02-12 11:22:10' );
+VALUES ( 10, '0001701002', 3894, '이거좋아용9', 1, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 11, '0001701002', 3894, '이거싫어용', 3, '2012-02-12 11:22:10' );
+VALUES ( 11, '0001701002', 3894, '이거싫어용10', 3, '2012-02-12 11:22:10' );
 INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl, comment, star_score, insertdate)
-VALUES ( 12, '0001701002', 3894, '이거그거그래요', 5, '2012-02-12 11:22:10' );
+VALUES ( 12, '0001701002', 3894, '이거그거그래요11-마지막', 5, '2012-02-12 11:22:10' );
 

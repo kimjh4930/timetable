@@ -10,7 +10,7 @@
 </head>
 	
 
-<table id="detailLineEvaluationTable">
+<table class="detailLineEvaluationTable">
 	<tbody>
 		<c:forEach items="${lineEvaluation.itemList}" var="item" varStatus="status"  >
 		<thead>	

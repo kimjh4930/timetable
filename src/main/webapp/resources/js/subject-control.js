@@ -148,11 +148,10 @@ function lineEvaluationAreaDetail(current,subjectCode){
 				},
 				success:function(data, status) {
 					$('#bodyDisabled').show();
-					var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();	
+					var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).append(data).show();	
+					infiniteScroll(current,subjectCode);
 					resetDetail(current,subjectCode);
-				
 					
-
 				}
 			});
 		})
@@ -176,8 +175,11 @@ function addCommentDetail(current,subjectCode) {
 			},
 			success:
 				function(data, status) {
-				var current=$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();	
+				$('#lineEvaluationAreaDetail').show().find($('#lineEvaluationAreaDetailScroll')).empty().append(data).show();
+				var current = $('#lineEvaluationAreaDetailScroll');	
 				resetDetail(current,subjectCode);
+				
+				//TODO : 삭제
 				$.ajax({
 					type:"GET",
 					url:"/getLineEvaluation.baron",
@@ -241,9 +243,10 @@ function deleteCommentDetail(current,subjectCode){
 
 //더보기댓글창 닫기 이벤트
 function closeEvaluationDetail(current){
+		$(current).scrollTop(0);
 		$('#closeLineEvaluationAreaDetail').click(function(){
 		$(current).css('display','none');
-		$('#lineEvaluationAreaDetail').css('display','none');
+		$('#lineEvaluationAreaDetail').css('display','none').find($('#lineEvaluationAreaDetailScroll')).empty();
 		$('#bodyDisabled').css('display','none');
 	});
 }
@@ -251,13 +254,30 @@ function closeEvaluationDetail(current){
 
 //더보기댓글창 무한스크롤 이벤트
 function infiniteScroll(current,subjectCode){
+	$(current).unbind('scroll');//이벤트버블링의 문제
 	$(current).scroll(function() {
 		var scrollHeight = $(current).scrollTop()+$(current).height();
-		var documentHeight = $(current).find($('#detailLineEvaluationTable')).height();
+		var documentHeight = $(current).find($('.detailLineEvaluationTable')).height();
 		if (scrollHeight == documentHeight) {
-			alert("로딩");
-				current2=$(current).append($("<h1>무한 스크롤  </h1>"));
-				resetDetail(current2,subjectCode);
+				
+				$.ajax({
+					type:"GET",
+					url:"/scrollLineEvaluationDetail.baron",
+					data:"subjectCode=" + subjectCode,
+					datatype:"xml",
+					error:function() {
+						alert('ajax failed');
+					},
+					success:function(data, status) {//해당 과목 댓글창 출력
+						current2=$(current).find($('.detailLineEvaluationTable')).append(data);
+						var documentHeight2 =$(current2).height();
+						$(current2).scrollTop(documentHeight);
+						infiniteScroll(current2,subjectCode);
+					}
+				})
+				
+				//resetDetail(current2,subjectCode);
+				
 		}
 	});
 
@@ -281,8 +301,6 @@ function resetDetail(current,subjectCode){
 	setPersonalStarScore(current);
 	addCommentDetail(current,subjectCode);
 	deleteCommentDetail(current,subjectCode);
-	closeEvaluationDetail(current);
-	infiniteScroll(current,subjectCode);
-	
+	closeEvaluationDetail(current);	
 }
 

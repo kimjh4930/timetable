@@ -92,6 +92,15 @@ public class SampleController {
 		return "lineEvaluationAreaDetail";
 	}
 	
+	
+	@RequestMapping("/scrollLineEvaluationDetail.baron")
+	public String scrollLineEvaluationDetail(Model model, String subjectCode) {
+		//service.deleteLineEvaluationItem(indexNo);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "scrollAreaDetail";
+	}
+	
 
 	@RequestMapping("/getSearchResult.baron")
 	public String searchSubjectReslut(Model model, String searchType, String searchKey) {

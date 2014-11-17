@@ -117,7 +117,7 @@ function searchSubject() {
 			$('.listArea').empty().append(data);
 			/*$('.listArea').empty().append(data).find('div').each(function(index) {
 				
-
+			한번 커밋하기 위한 용도
 			})*/
 		}
 	});

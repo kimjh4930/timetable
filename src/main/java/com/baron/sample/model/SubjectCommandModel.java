@@ -3,6 +3,8 @@ package com.baron.sample.model;
 public class SubjectCommandModel {
 	private String searchType;
 	private String searchKey;
+	private String department;
+	private String section;
 
 	public String getSearchType() {
 		return searchType;
@@ -20,4 +22,20 @@ public class SubjectCommandModel {
 		this.searchKey = searchKey;
 	}
 	//여기다가 학과정보조회 추가
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getSection() {
+		return section;
+	}
+
+	public void setSection(String section) {
+		this.section = section;
+	}
 }

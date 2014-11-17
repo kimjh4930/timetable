@@ -78,11 +78,19 @@
             tt_subject
         WHERE
             1 = 1
-      <if test="searchType == 'subject'">
-        AND title LIKE '%' || #{searchKey} || '%'
+      <if test="searchType == null and searchKey != ''">
+	      <if test="searchType == 'subject'">
+	        AND title LIKE '%' || #{searchKey} || '%'
+	      </if>
+	      <if test="searchType == 'professor'">
+	        AND professor LIKE '%' || #{searchKey} || '%'
+	      </if>
       </if>
-      <if test="searchType == 'professor'">
-        AND professor LIKE '%' || #{searchKey} || '%'
+      <if test="department != null and department != '전체'">
+            AND major = #{department}
+            <if test="section != null and section != '선택'">
+                AND section = #{section}
+            </if>
       </if>
     </select>
     

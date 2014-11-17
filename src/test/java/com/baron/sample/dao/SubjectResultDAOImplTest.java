@@ -58,4 +58,24 @@ public class SubjectResultDAOImplTest {
 		//Then
 		assertNotNull(actual);
 	}
+	@Test
+	public void tstSelectSubject_학과_조회했을때() throws Exception {
+		//Given
+		String searchKey = "";
+		String searchType = "subject";
+		String department = "전체";
+		String section = "교양선택";		
+		
+		SubjectCommandModel command = new SubjectCommandModel();
+		command.setSearchKey(searchKey);
+		command.setSearchType(searchType);
+		command.setDepartment(department);
+		command.setSection(section);
+
+		//When
+		List<SubjectResultModel> actual = dao.searchSubject(command);
+
+		//Then
+		assertNotNull(actual);
+	}
 }

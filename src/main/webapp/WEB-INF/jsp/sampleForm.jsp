@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%> 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> <!-- c태그를 쓸 수 있음. -->
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- c태그를 쓸 수 있음. -->
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Sample Form</title>
-	<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
-	<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="/resources/js/common.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sample Form</title>
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
+<script type="text/javascript"
+	src="/resources/js/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/resources/js/common.js"></script>
+<script type="text/javascript" src="/resources/js/subject-control.js"></script>
+
 </head>
 <body>
 	<header id="main_header">
@@ -38,7 +42,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>1교시 9:30</td>
+							<td>1교시9:30</td>
 						</tr>
 						<tr>
 							<td>2교시 10:30</td>
@@ -215,37 +219,29 @@
 		</section>
 		<section id="right_section">
 			<article class="searchArea">
-				캠퍼스구분 
-				<select class="CampusSort">
+				캠퍼스구분 <select class="CampusSort">
 					<option value="songdo">송도</option>
 					<option value="jemulpo">제물포</option>
-				</select>
-				
-				학기선택 
-				<select class="semesterSelect">
+				</select> 학기선택 <select class="semesterSelect">
 					<option value="semeste">2014년2학기</option>
-				</select><br>
-				
-				학과선택
-				<select class="department" id="departmentList">
-			        <option value="selectDefault" id="selectDefault" name="selectDefault">전공/교양 선택</option>
-			        <option value="subjectAll" id="subjectAll" name="subjectAll">전체</option>
-			        <option value="liberalArts" id="liberalArts" name="liberalArts">교양</option>
-			        <option value="teachingCourse" id="teachingCourse" name="teachingCourse">교직</option>
-			        <option value="generalCourse" id="generalCourse" name="generalCourse">일반선택</option>
-			        <option value="militaryCourse" id="militaryCourse" name="militaryCourse">군사학</option>
-				    <c:forEach items="${departmentList}" var="department">
-				        <option value="department" name="department" id="department"> ${department} </option>
-				    </c:forEach>
-			    </select>
-				
-				이수구분
-				<select class="section" id="completionDivision">
+				</select><br> 학과선택 <select class="department" id="departmentList">
+					<option value="selectDefault" id="selectDefault"
+						name="selectDefault">전공/교양 선택</option>
+					<option value="subjectAll" id="subjectAll" name="subjectAll">전체</option>
+					<option value="liberalArts" id="liberalArts" name="liberalArts">교양</option>
+					<option value="teachingCourse" id="teachingCourse"
+						name="teachingCourse">교직</option>
+					<option value="generalCourse" id="generalCourse"
+						name="generalCourse">일반선택</option>
+					<option value="militaryCourse" id="militaryCourse"
+						name="militaryCourse">군사학</option>
+					<c:forEach items="${departmentList}" var="department">
+						<option value="department" name="department" id="department">
+							${department}</option>
+					</c:forEach>
+				</select> 이수구분 <select class="section" id="completionDivision">
 					<option value="section">선택</option>
-				</select>
-				
-				요일
-				<select class="day">
+				</select> 요일 <select class="day">
 					<option value="monday">월</option>
 					<option value="tuesday ">화</option>
 					<option value="wednesday">수</option>
@@ -253,21 +249,21 @@
 					<option value="friday">금</option>
 				</select><br>
 				<form>
-					학년 
-					<input type="checkbox" id="ch1" class="css-checkbox" name="year" value="1" checked="checked">
-					   <label for="ch1"	class="css-label">1</label>
-					   <input type="checkbox" id="ch2"	class="css-checkbox" name="year" value="2" checked="checked">
-					   <label for="ch2" class="css-label">2</label>
-					   <input type="checkbox" id="ch3" class="css-checkbox" name="year" value="3" checked="checked">
-					   <label for="ch3" class="css-label">3</label>
+					학년 <input type="checkbox" id="ch1" class="css-checkbox" name="year"
+						value="1" checked="checked"> <label for="ch1"
+						class="css-label">1</label> <input type="checkbox" id="ch2"
+						class="css-checkbox" name="year" value="2" checked="checked">
+					<label for="ch2" class="css-label">2</label> <input type="checkbox"
+						id="ch3" class="css-checkbox" name="year" value="3"
+						checked="checked"> <label for="ch3" class="css-label">3</label>
 					<input type="checkbox" id="ch4" class="css-checkbox" name="year"
 						value="4" checked="checked"> <label for="ch4"
-						class="css-label">4</label>
-					<input type="text" name="searchBox" id="searchBox">
-					<select class="searchSelect" style="float: right;" id="selectSearch">
+						class="css-label">4</label> <input type="text" name="searchBox"
+						id="searchBox"> <select class="searchSelect"
+						style="float: right;" id="selectSearch">
 						<option value="subject">과목명</option>
 						<option value="professor">교수명</option>
-					</select> 
+					</select>
 					<button type="button" class="search_bt" name="검색" id="btnSearch">검색</button>
 				</form>
 				<div class="line"></div>
@@ -277,26 +273,26 @@
 			</article>
 			<article class="subjectResultArea">
 				<table>
-                    <colgroup>
-                        <col width="150">
-                        <col width="60">
-                        <col width="70">
-                        <col width="60">
-                        <col width="100">
-                        <col width="50">
-                    </colgroup>
-				    <thead>
-                        <tr class="title2">
-                            <td>교과목명</td>
-                            <td>이수구분</td>
-                            <td>학년/학점</td>
-                            <td>담당교수</td>
-                            <td>시간/강의실</td>
-                            <td>북마크</td>
-                        </tr>
-				    </thead>
-				    <tbody class="listArea">
-				    </tbody>
+					<colgroup>
+						<col width="150">
+						<col width="60">
+						<col width="70">
+						<col width="60">
+						<col width="100">
+						<col width="50">
+					</colgroup>
+					<thead>
+						<tr class="title2">
+							<td>교과목명</td>
+							<td>이수구분</td>
+							<td>학년/학점</td>
+							<td>담당교수</td>
+							<td>시간/강의실</td>
+							<td>북마크</td>
+						</tr>
+					</thead>
+					<tbody class="listArea">
+					</tbody>
 				</table>
 			</article>
 		</section>
@@ -305,6 +301,11 @@
 		<h3>footer</h3>
 	</footer>
 	<div id="lineEvaluationArea"></div>
+	<div id="lineEvaluationAreaDetail">
+		<div id="closeLineEvaluationAreaDetail">x</div>
+		<div id="lineEvaluationAreaDetailScroll"></div>
+	</div>
+	<div id="bodyDisabled"></div>
 </body>
 
 

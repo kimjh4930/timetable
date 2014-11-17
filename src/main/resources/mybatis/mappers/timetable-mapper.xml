@@ -15,6 +15,7 @@
 		<result column="user_id" property="userId"/>
 		<result column="comment" property="comment"/>
 		<result column="star_score" property="starScore"/>
+		<result column="insertdate" property="date"/>
 	</resultMap>
 
     <select id="selectPersonalData" resultType="personalModel" parameterType="personalCommandModel">
@@ -30,7 +31,7 @@
     		title,
     		professor,
     		(
-    			SELECT AVG(star_score)
+    			SELECT ROUND(AVG(star_score),2)
     			FROM tt_line_evaulation
     			WHERE subject_code = #{subjectCode}
     		) as avgStarScore
@@ -45,13 +46,16 @@
     		le.le_no,
     		m.user_id,
     		le.comment,
-    		le.star_score
+    		le.star_score,
+    		le.insertdate 
     	FROM 
     		tt_line_evaulation le, xe_member m
     	WHERE
-    		le.member_srl = m.member_srl
+    		le.member_srl = m.member_srl 
     	AND
-    		le.subject_code = #{subjectCode}
+    		le.subject_code = #{subjectCode} 
+    	ORDER BY
+    	    le.insertdate DESC
     </select>
     
     <select id="selectMember" resultType="int" parameterType="int">
@@ -81,6 +85,7 @@
         AND professor LIKE '%' || #{searchKey} || '%'
       </if>
     </select>
+    
     <select id="selectDepartment" resultType="String">
         SELECT
             major As subjectDept
@@ -88,6 +93,7 @@
             tt_subject
         GROUP BY major
     </select>
+    
     <select id="searchSubjectByDepartment" resultType="subjectResultModel" parameterType="subjectCommandModel">
         SELECT
             code AS subjectCode,
@@ -105,5 +111,16 @@
             1 = 1
     </select>
     
-    
+    <insert id="insertLineEvaluationItem" parameterType="LineEvaluationItem">
+		<selectKey resultType="Integer" keyProperty="indexNo" order="BEFORE">
+			SELECT MAX(le_no)+1 FROM tt_line_evaulation
+		</selectKey>
+		INSERT INTO tt_line_evaulation( le_no, subject_code, member_srl,comment, star_score, insertdate)
+		VALUES (#{indexNo}, #{subjectCode}, 3894, #{comment}, #{starScore}, #{date} );
+	</insert>
+	
+	<delete id="deleteLineEvaluationItem" parameterType="Integer">
+		delete from tt_line_evaulation where le_no=#{indexNo}
+	</delete>
+	
 </mapper>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <script type="text/javascript" src="/resources/js/common.js"></script> --%>
 <c:forEach items="${subjectResultList}" var="subjectResult">
-    <tr>
+    <tr id="subjectRow" subjectCode="${subjectResult.subjectCode}">
         <td>${subjectResult.subjectName}</td>
         <td>${subjectResult.grade}</td>
         <td>${subjectResult.credit}</td>

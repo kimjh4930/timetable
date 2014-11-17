@@ -34,9 +34,73 @@ public class SampleController {
 	public String getLineEvaluation(Model model, String subjectCode) {
 		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
 		model.addAttribute("lineEvaluation", lineEvaluationModel);
-		
 		return "lineEvaluationPopup";
 	}
+	
+	
+	@RequestMapping("/addLineEvaluation.baron")
+	public String addLineEvaluation(Model model, String comment , String subjectCode , String star_Score) {
+		String userId="zakarose";
+		int starScore=Integer.parseInt(star_Score);
+		
+		service.addLineEvaluationItem(comment,subjectCode,userId,starScore);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationPopup";
+	}
+	
+	
+	
+	@RequestMapping("/deleteLineEvaluation.baron")
+	public String deleteLineEvaluation(Model model, int indexNo , String subjectCode) {
+
+		service.deleteLineEvaluationItem(indexNo);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationPopup";
+	}
+	
+	
+	@RequestMapping("/detailLineEvaluationArea.baron")
+	public String detailLineEvaluationArea(Model model, String subjectCode){
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
+	}
+	
+	
+	
+	@RequestMapping("/addLineEvaluationDetail.baron")
+	public String addLineEvaluationDetail(Model model, String comment , String subjectCode , String star_Score) {
+		String userId="zakarose";
+		int starScore=Integer.parseInt(star_Score);
+		
+		System.out.println();
+		System.out.println(star_Score);
+		service.addLineEvaluationItem(comment,subjectCode,userId,starScore);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
+	}
+	
+	
+	@RequestMapping("/deleteLineEvaluationDetail.baron")
+	public String deleteLineEvaluationDetail(Model model, int indexNo , String subjectCode) {
+		service.deleteLineEvaluationItem(indexNo);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "lineEvaluationAreaDetail";
+	}
+	
+	
+	@RequestMapping("/scrollLineEvaluationDetail.baron")
+	public String scrollLineEvaluationDetail(Model model, String subjectCode) {
+		//service.deleteLineEvaluationItem(indexNo);
+		LineEvaluationModel lineEvaluationModel = service.getLineEvaluation(subjectCode);
+		model.addAttribute("lineEvaluation", lineEvaluationModel);
+		return "scrollAreaDetail";
+	}
+	
 
 	@RequestMapping("/getSearchResult.baron")
 	public String searchSubjectReslut(Model model, String searchType, String searchKey) {

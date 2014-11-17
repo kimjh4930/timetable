@@ -1,24 +1,82 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<head>
+	<link rel="stylesheet" type="text/css" href="/resources/css/jquery.rating.css" />
+	<script type="text/javascript" src="/resources/js/jquery/jquery.MetaData.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery/jquery.rating.pack.js"></script>
+</head>
+<div class="lineEvaluationLeftArea">
+	${lineEvaluation.subjectName}
+	<br> 
+	<div id="main_star_area" mainStarScore="${lineEvaluation.avgStarScore}" >
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" />
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" /> 
+		<input name="main_star" type="radio" class="star {split:2}" />
+	 	${lineEvaluation.avgStarScore}
+	</div>
+</div>
 
-<div class="lineEvaluationLeftArea">${lineEvaluation.subjectName}</div>
-<div class="lineEvaluationRightArea">${lineEvaluation.professorName} 교수님</div>
-<div class="lineEvaluationLeftArea">${lineEvaluation.avgStarScore} </div>
+<div class="lineEvaluationRightArea" id="close">x</div>
+
+
+<div class="lineEvaluationRightArea">${lineEvaluation.professorName}교수님 
+	<br> 다른 과목 리뷰보기 >
+</div>
+
+
+
+
 <table id="lineEvaluationTable">
-	<thead>
-	</thead>
 	<tbody>
-		<c:forEach items="${lineEvaluation.itemList}" var="item">
+		<c:forEach items="${lineEvaluation.itemList}" var="item" varStatus="status" begin="0" end="5" >
+		<thead>	
 			<tr>
-				<td>${item.userId}</td>
-				<td>${item.comment}</td>
-				<td>${item.starScore}</td>
+				<td rowspan="2" style="width:90px; height:50px;" class="personalScore" personalScore="${item.starScore}" > 
+					<c:forEach begin="1" end="10">
+						<input name="saved_star${status.index}" type="radio" class="star {split:2} person " /> 
+					</c:forEach>
+				</td>
+				<td style="width:220px; height:30px; margin-bottom:0px; " >${item.comment}</td> 	 	
+				<td id="delete" style="padding-left:8px;" index="${item.indexNo}">x</td>
 			</tr>
+			<tr>
+				<td style="width:220px; height:20px; font-size:11px; font-weight:normal; color:gray; margin-bottom:5px;" >
+				${item.userId} | <fmt:formatDate value="${item.date}" pattern="yyyy.MM.dd a hh:mm"/> </td>
+				<td></td>
+			</tr>
+		</thead>	
 		</c:forEach>
+		<tr id="other_evaluation">
+			<td  style="height:30px; font-size:11px; ">다른 댓글 더 보기</td>
+		</tr>
+		
 	</tbody>
+
 </table>
-<form action="get">
-	로그인아이디
-	<input type="text" name="comemt">
-</form>	
+
+
+<form id="evaluationForm" >
+	<input name="personal_star" type="radio"  value="1" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="2" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="3" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="4" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="5" class="star {split:2}" />
+	<input name="personal_star" type="radio"  value="6" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="7" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="8" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="9" class="star {split:2}" /> 
+	<input name="personal_star" type="radio"  value="10" class="star {split:2}" checked="checked"/>
+
+	<input type="text" name="comment" id="input"
+		placeholder="댓글을 입력하세요">
+
+</form>

@@ -65,26 +65,26 @@ $(document).ready(function() {
 			//교양
 			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
 			$("#completionDivision").append("<option value=liberalSelect id=liberalSelect>교양선택</option>");
-			searchSubject();
+			searchDivision();
 		}else if($("#departmentList option:selected").val() == "department"){
 			//전공 - 기초과학, 전공기초, 전공필수, 전공선택
 			$("#completionDivision").append("<option value=basicScience id=basicScience>기초과학</option>");
 			$("#completionDivision").append("<option value=basicMajor id=basicMajor>전공기초</option>");
 			$("#completionDivision").append("<option value=requiredMajor id=requiredMajor>전공필수</option>");
 			$("#completionDivision").append("<option value=choosedMajor id=choosedMajor>전공선택</option>");
-			searchSubject();
+			searchDivision();
 		}else if($("#departmentList option:selected").val() == "teachingCourse"){
 			//교직 - 교직
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
-			searchSubject();
+			searchDivision();
 		}else if($("#departmentList option:selected").val() == "generalCourse"){
 			//일선 - 일반선택
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
-			searchSubject();
+			searchDivision();
 		}else if($("#departmentList option:selected").val() == "militaryCourse"){
 			//군사학 - 군사학
 			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
-			searchSubject();
+			searchDivision();
 		}else if($("#departmentList option:selected").val() == "subjectAll"){
 			//전체선택
 			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
@@ -96,13 +96,13 @@ $(document).ready(function() {
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
 			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
-			searchSubject();
+			searchDivision();
 		}else{
 			//그외에는 반응 안함
+			//searchSubject();
 		}
 		searchSubject();
 	});
-	
 	//초기화버튼
 	$("#btnReset").click(function() {
 
@@ -117,8 +117,12 @@ function searchSubject() {
 	$.ajax({
 		type:"GET",							// GET or POST
 		url:"/getSearchResult.baron",				// 호출할 URL
-		data:"searchType=" + $('#selectSearch').val()+"&searchKey=" + $('#searchBox').val() +"&department="
-			 +$('#departmentList option:selected').text() + "&section=" + $('#select option:selected').text(),
+		data:
+			"searchType=" + $('#selectSearch').val() + 
+			"&searchKey=" + $('#searchBox').val() + 
+			"&department=" +$('#departmentList option:selected').text() +
+			"&section=" +   $('#completionDivision option:selected').text() + 
+			"&day=" +       $('#daySelect option:selected').text(),
 		error:function() {					// Ajax error handler
 			alert('ajax failed search');
 		},
@@ -128,5 +132,11 @@ function searchSubject() {
 
 			})
 		}
+	});
+}
+
+function searchDivision(){
+	$("#completionDivision").click(function(){
+		searchSubject();
 	});
 }

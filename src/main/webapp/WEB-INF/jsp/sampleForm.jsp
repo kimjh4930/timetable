@@ -241,7 +241,8 @@
 					</c:forEach>
 				</select> 이수구분 <select class="section" id="completionDivision">
 					<option value="section">선택</option>
-				</select> 요일 <select class="day">
+				</select> 요일 <select class="day" id="daySelect">
+				    <option value="choose">선택</option>
 					<option value="monday">월</option>
 					<option value="tuesday ">화</option>
 					<option value="wednesday">수</option>

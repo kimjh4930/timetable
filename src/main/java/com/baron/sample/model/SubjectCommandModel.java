@@ -5,6 +5,7 @@ public class SubjectCommandModel {
 	private String searchKey;
 	private String department;
 	private String section;
+	private String day;
 
 	public String getSearchType() {
 		return searchType;
@@ -37,5 +38,13 @@ public class SubjectCommandModel {
 
 	public void setSection(String section) {
 		this.section = section;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
 	}
 }

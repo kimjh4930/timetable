@@ -88,10 +88,14 @@
       </if>
       <if test="department != null and department != '전체'">
             AND major = #{department}
-            <if test="section != null and section != '선택'">
-                AND section = #{section}
-            </if>
+          <if test="section != null and section != '선택'">
+               AND section = #{section}
+          </if>
+          <if test="day != null and day != '선택'">
+               AND classhour like '%'#{day}'%'
+          </if>
       </if>
+      
     </select>
     
     <select id="selectDepartment" resultType="String">

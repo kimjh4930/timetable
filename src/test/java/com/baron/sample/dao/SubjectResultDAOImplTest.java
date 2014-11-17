@@ -42,7 +42,7 @@ public class SubjectResultDAOImplTest {
 		assertNotNull(actual);
 	}
 	
-	@Test
+	/*@Test
 	public void testSelectSubject_교수명으로_조회했을때() throws Exception {
 		//Given
 		String searchKey = "이문학";
@@ -57,20 +57,22 @@ public class SubjectResultDAOImplTest {
 
 		//Then
 		assertNotNull(actual);
-	}
+	}*/
 	@Test
-	public void tstSelectSubject_학과_조회했을때() throws Exception {
+	public void testSelectSubject_학과_조회했을때() throws Exception {
 		//Given
 		String searchKey = "";
 		String searchType = "subject";
-		String department = "전체";
-		String section = "교양선택";		
+		String department = "컴퓨터공학부";
+		String section = "선택";
+		String day = "목";
 		
 		SubjectCommandModel command = new SubjectCommandModel();
 		command.setSearchKey(searchKey);
 		command.setSearchType(searchType);
 		command.setDepartment(department);
 		command.setSection(section);
+		command.setDay(day);
 
 		//When
 		List<SubjectResultModel> actual = dao.searchSubject(command);

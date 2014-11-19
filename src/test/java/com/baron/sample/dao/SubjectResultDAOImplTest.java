@@ -65,7 +65,11 @@ public class SubjectResultDAOImplTest {
 		String searchType = "subject";
 		String department = "컴퓨터공학부";
 		String section = "선택";
-		String day = "목";
+		String day = "";
+		String grade1 = "1";
+//		String grade2 = "2";
+//		String grade3 = "3";
+//		String grade4 = "4";
 		
 		SubjectCommandModel command = new SubjectCommandModel();
 		command.setSearchKey(searchKey);
@@ -73,6 +77,7 @@ public class SubjectResultDAOImplTest {
 		command.setDepartment(department);
 		command.setSection(section);
 		command.setDay(day);
+		command.setYear1(grade1);
 
 		//When
 		List<SubjectResultModel> actual = dao.searchSubject(command);

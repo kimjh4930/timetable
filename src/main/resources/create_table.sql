@@ -27,13 +27,13 @@ INSERT INTO tt_subject ( code, section, major, title, classyear, credit, profess
 VALUES ( '0X12374568', '교양선택', '교양',  '인간과우주', 2, 3, '정연철', '수1~3', 'SN204', '송도', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
-VALUES ( '0X12745678', '전공기초', '컴퓨터공학부',  '컴퓨터네트워크보안', 2, 3, '정연철', '수1~3', 'SN204', '송도', '' );
+VALUES ( '0X12745678', '전공기초', '컴퓨터공학부',  '컴퓨터네트워크보안', 1, 3, '정연철', '수1~3', 'SN204', '송도', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
 VALUES ( '0X12397578', '전공필수', '컴퓨터공학부',  '컴퓨터네트워크', 2, 3, '정연철', '목1~3', 'SN204', '송도', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
-VALUES ( '0X6345678', '전공선택', '컴퓨터공학부',  '데이터베이스', 2, 3, '정연철', '목1~3', 'SN204', '송도', '' );
+VALUES ( '0X6345678', '전공선택', '컴퓨터공학부',  '데이터베이스', 3, 3, '정연철', '목1~3', 'SN204', '송도', '' );
 
 INSERT INTO tt_subject ( code, section, major, title, classyear, credit, professor, classhour, classroom, campussort, etc )
 VALUES ( '0X123nnm78', '일반선택', '군사학',  '인터넷특론', 2, 3, '정연철', '금1~3', 'SN204', '송도', '' );

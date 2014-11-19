@@ -44,12 +44,6 @@ $(document).ready(function() {
 		}
 	});
 	//과목선택한거에 따라서 이수구분 추가
-	
-	
-	
-	/*if($("#departmentList option:selected").val() == "liberalArts"){
-		$("#liberalArts").append("<option value=essential>교양필수")
-	}*/
 	/*
 	 * 교양 - 교양필수, 교양선택
 	 * 교직 - 교직
@@ -57,34 +51,32 @@ $(document).ready(function() {
 	 * 전공 - 전공기초, 전공필수, 전공선택, 기초과학
 	 * 군사학 - 군사학
 	 */
+	
 	$("#departmentList").click(function(){
 		$("#completionDivision").empty();
 		$("#completionDivision").append("<option value=select id=select>선택</option>");
+		
+		//department=("#departmentList option:selected").val();
 		
 		if($("#departmentList option:selected").val() == "liberalArts"){
 			//교양
 			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
 			$("#completionDivision").append("<option value=liberalSelect id=liberalSelect>교양선택</option>");
-			searchDivision();
 		}else if($("#departmentList option:selected").val() == "department"){
 			//전공 - 기초과학, 전공기초, 전공필수, 전공선택
 			$("#completionDivision").append("<option value=basicScience id=basicScience>기초과학</option>");
 			$("#completionDivision").append("<option value=basicMajor id=basicMajor>전공기초</option>");
 			$("#completionDivision").append("<option value=requiredMajor id=requiredMajor>전공필수</option>");
 			$("#completionDivision").append("<option value=choosedMajor id=choosedMajor>전공선택</option>");
-			searchDivision();
 		}else if($("#departmentList option:selected").val() == "teachingCourse"){
 			//교직 - 교직
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
-			searchDivision();
 		}else if($("#departmentList option:selected").val() == "generalCourse"){
 			//일선 - 일반선택
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
-			searchDivision();
 		}else if($("#departmentList option:selected").val() == "militaryCourse"){
 			//군사학 - 군사학
 			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
-			searchDivision();
 		}else if($("#departmentList option:selected").val() == "subjectAll"){
 			//전체선택
 			$("#completionDivision").append("<option value=liberalEssential id=liberalEssential>교양필수</option>");
@@ -96,12 +88,14 @@ $(document).ready(function() {
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
 			$("#completionDivision").append("<option value=teachingSelect id=teachingSelect>교직</option>");
 			$("#completionDivision").append("<option value=militarySelect id=militarySelect>군사학</option>");
-			searchDivision();
 		}else{
-			//그외에는 반응 안함
-			//searchSubject();
+			
 		}
+		
 		searchSubject();
+		searchDivision();
+		searchByDay();
+		checkYear();
 	});
 	//초기화버튼
 	$("#btnReset").click(function() {
@@ -122,7 +116,13 @@ function searchSubject() {
 			"&searchKey=" + $('#searchBox').val() + 
 			"&department=" +$('#departmentList option:selected').text() +
 			"&section=" +   $('#completionDivision option:selected').text() + 
-			"&day=" +       $('#daySelect option:selected').text(),
+			"&day=" +       $('#daySelect option:selected').text() +
+			"&year1=" +		$("input:checkbox:checked").val() +
+			//"&year1=" +		$("#ch1").attr('checked').val() +
+			"&year2=" +		$("input:checkbox:checked").val() +
+			"&year3=" +		$("input:checkbox:checked").val() +
+			"&year4=" +		$("input:checkbox:checked").val(),
+			
 		error:function() {					// Ajax error handler
 			alert('ajax failed search');
 		},
@@ -140,3 +140,36 @@ function searchDivision(){
 		searchSubject();
 	});
 }
+function searchByDay(){
+	$("#daySelect").click(function(){
+		searchSubject();
+	});
+}
+function checkYear(){
+	//학년 선택 1,2,3,4 학년 체크했을경우 선택
+	//여기서는 클릭했을 경우마다 이벤트가 발생하도록 함
+	var isCheck;
+	$("#ch1").click(function(){
+		/*isCheck=$('#ch1').is(':checked') ? 1 : 0;
+		if(1 == isCheck){
+			//체크됨
+			searchSubject();
+		}else{
+			//체크 안됨
+		}*/
+		searchSubject();
+	})
+	$("#ch2").click(function(){
+		//isCheck=$('#ch2').is(':checked') ? 1 : 0;
+		searchSubject();
+	})
+	$("#ch3").click(function(){
+		//isCheck=$('#ch3').is(':checked') ? 1 : 0;
+		searchSubject();
+	})
+	$("#ch4").click(function(){
+		//isCheck=$('#ch4').is(':checked') ? 1 : 0;
+		searchSubject();
+	})
+}
+

@@ -428,3 +428,66 @@ table {
 	background: red;
 	margin-top: 10px;
 }
+
+#enroll_style{
+	padding-top: 12px;
+	padding-left: 120px;
+	padding-botton: 12px;
+	font-size: 15px;
+}
+
+.label_title{
+	margin : 0px auto;
+	margin-top: 15px;
+	margin-botton: 15px;
+	font-size:15px;
+	text-align: center;
+}
+
+#board_title{
+	background-color : #C1CDCD ;
+	height: 50px;
+}
+
+.label_content{
+	margin : 0px auto;
+    margin-top: 15px;
+    margin-botton: 15px;
+    font-size:15px;
+    text-align: center;
+}
+
+.board_bottom{
+	margin : 0px auto;
+	margin-top: 15px;
+    margin-botton: 15px;
+    text-align: center;
+}
+
+#boardContent_content {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 39px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+#boardView_content {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 39px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.boardview_row{
+	height : 50px;
+}
+
+.boardview_p{
+	margin-top : 15px;
+}

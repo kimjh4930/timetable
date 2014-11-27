@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!-- c태그를 쓸 수 있음. -->
 <!DOCTYPE html>
 <html>
@@ -8,8 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sample Form</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css" />
-<script type="text/javascript"
-	src="/resources/js/jquery/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/resources/js/jquery/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/subject-control.js"></script>
 
@@ -17,6 +17,16 @@
 <body>
 	<header id="main_header">
 		<h3>header</h3>
+		<!-- 로그인, 회원가입 부분 -->
+		<div id="login" align="right">
+			ID
+			<input type="text" id="insert_id">
+			<input type="button" id="member_register" value="회원가입"></br>
+			Password
+			<input type="password" id="insert_pw">
+			<input type="button" id="login" value="로그인">
+	     </div>
+		
 	</header>
 	<div id="content">
 		<section id="left_section">
@@ -256,7 +266,7 @@
 					       <label for="ch2" class="css-label">2</label>
 					   <input type="checkbox" id="ch3" class="css-checkbox" name="year3" value="3" checked="checked">
 					       <label for="ch3" class="css-label">3</label>
-					   <input type="checkbox" id="ch4" class="css-checkbox" name="year4"	value="4" checked="checked">
+					   <input type="checkbox" id="ch4" class="css-checkbox" name="year4" value="4" checked="checked">
 					       <label for="ch4" class="css-label">4</label>
 					   <input type="text" name="searchBox" id="searchBox">
 					       <select class="searchSelect" style="float: right;" id="selectSearch">

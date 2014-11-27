@@ -94,18 +94,12 @@
           <if test="day != null and day != '선택'">
                AND classhour like '%' || #{day} || '%'
           </if>
-          <if test="year1 == 1">
-               AND classyear = #{year1}
-          </if>
-          <if test="year2 == 2">
-               AND classyear = #{year2}
-          </if>
-          <if test="year3 == 3">
-               AND classyear = #{year3}
-          </if>
-          <if test="year4 == 4">
-               AND classyear = #{year4}
-          </if>
+          <trim prefix="AND classyear IN (" suffixOverrides="," suffix=")">
+	          <if test="year1" >1,</if>
+	          <if test="year2" >2,</if>
+	          <if test="year3" >3,</if>
+	          <if test="year4" >4,</if>
+          </trim>
       </if>
       
     </select>

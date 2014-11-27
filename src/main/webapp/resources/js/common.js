@@ -95,12 +95,14 @@ $(document).ready(function() {
 		searchSubject();
 		searchDivision();
 		searchByDay();
-		checkYear();
+		
 	});
 	//초기화버튼
 	$("#btnReset").click(function() {
 
 	});
+	
+	checkYear();
 });
 
 function addOptions(){
@@ -117,11 +119,10 @@ function searchSubject() {
 			"&department=" +$('#departmentList option:selected').text() +
 			"&section=" +   $('#completionDivision option:selected').text() + 
 			"&day=" +       $('#daySelect option:selected').text() +
-			"&year1=" +		$("input:checkbox:checked").val() +
-			//"&year1=" +		$("#ch1").attr('checked').val() +
-			"&year2=" +		$("input:checkbox:checked").val() +
-			"&year3=" +		$("input:checkbox:checked").val() +
-			"&year4=" +		$("input:checkbox:checked").val(),
+			"&year1=" +		$("#ch1").prop("checked") +
+			"&year2=" +		$("#ch2").prop("checked") +
+			"&year3=" +		$("#ch3").prop("checked") +
+			"&year4=" +		$("#ch4").prop("checked"),
 			
 		error:function() {					// Ajax error handler
 			alert('ajax failed search');
@@ -146,17 +147,20 @@ function searchByDay(){
 	});
 }
 function checkYear(){
+	
 	//학년 선택 1,2,3,4 학년 체크했을경우 선택
 	//여기서는 클릭했을 경우마다 이벤트가 발생하도록 함
-	var isCheck;
-	$("#ch1").click(function(){
-		/*isCheck=$('#ch1').is(':checked') ? 1 : 0;
+	$(".css-checkbox").click(function(){
+		searchSubject();
+	})
+	/*$("#ch1").click(function(){
+		isCheck=$('#ch1').is(':checked') ? 1 : 0;
 		if(1 == isCheck){
 			//체크됨
 			searchSubject();
 		}else{
 			//체크 안됨
-		}*/
+		}
 		searchSubject();
 	})
 	$("#ch2").click(function(){
@@ -170,6 +174,6 @@ function checkYear(){
 	$("#ch4").click(function(){
 		//isCheck=$('#ch4').is(':checked') ? 1 : 0;
 		searchSubject();
-	})
+	})*/
 }
 
